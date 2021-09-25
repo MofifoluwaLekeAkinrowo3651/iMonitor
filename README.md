@@ -1,3 +1,3 @@
 # SmartBuilding Project
 
-# Team greenOps : Mofifoluwa Leke-Akinrowo, Andrew Fraser, Bibek Dhakal
+Team greenOps : Mofifoluwa Leke-Akinrowo, Andrew Fraser, Bibek Dhakal
