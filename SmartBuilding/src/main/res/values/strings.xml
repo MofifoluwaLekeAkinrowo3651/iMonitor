@@ -14,6 +14,13 @@
     <string name="previous">Previous</string>
 
     <string name="events">EVENTS</string>
+    <string name="open">open</string>
+    <string name="doorOpen">DOOR IS OPEN</string>
+    <string name="doorClose">DOOR IS CLOSED</string>
+    <string name="on">ON</string>
+    <string name="fireAlarmOn">FIRE ALARM IS ON</string>
+    <string name="fireAlarmOff">FIRE ALARM IS OFF</string>
+
     <string name="demo_content">Finding easier methods to monitor and control your electricity usage and keeping our Earth green!</string>
     <string name="demo_title">Smart Building</string>
     <string name="finish">Finish</string>
