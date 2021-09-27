@@ -1,9 +1,13 @@
 package ca.greenops.it.smartbuilding;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -14,25 +18,16 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.quintus.labs.smarthome.R;
-import ca.greenops.it.smartbuilding.RoomAdapter;
-import ca.greenops.it.smartbuilding.Room;
-
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Smart Home
- * https://github.com/quintuslabs/SmartHome
- * Created on 27-OCT-2019.
- * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
- */
 public class MainActivity extends AppCompatActivity {
-    private List<Room> roomList = new ArrayList<>();
+    private final List<Room> roomList = new ArrayList<>();
     private RecyclerView recyclerView;
     private RoomAdapter mAdapter;
 
-    RelativeLayout home_rl, time_rl, setting_rl, scene_rl;
+    RelativeLayout home_rl;
+//    ImageButton setting_rl;
 
     public static void setWindowFlag(Activity activity, final int bits, boolean on) {
 
@@ -61,18 +56,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         home_rl = findViewById(R.id.home_rl);
-        time_rl = findViewById(R.id.time_rl);
-        scene_rl = findViewById(R.id.scene_rl);
-        setting_rl = findViewById(R.id.setting_rl);
-
+//        ImageButton setting_rl = findViewById(R.id.setting_rl);
         recyclerView = findViewById(R.id.recycler_view);
 
-        home_rl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                home_rl.setBackgroundResource(0);
-            }
-        });
+        home_rl.setOnClickListener(v -> home_rl.setBackgroundResource(0));
+
+//        setting_rl.setOnClickListener(v -> {
+//            Intent i = new Intent(MainActivity.this, SettingsActivity.class);
+//            startActivity(i);
+//        });
 
         mAdapter = new RoomAdapter(roomList, getApplicationContext());
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
@@ -90,25 +82,34 @@ public class MainActivity extends AppCompatActivity {
         roomList.add(room);
         room = new Room("1", "Bathroom");
         roomList.add(room);
-        room = new Room("2", "Hall");
+        room = new Room("2", "Hallway");
         roomList.add(room);
         room = new Room("1", "Dining");
         roomList.add(room);
-        room = new Room("2", "Kitchen");
+        room = new Room("2", "Lock Doors");
         roomList.add(room);
-        room = new Room("1", "BedRoom");
-        roomList.add(room);
-        room = new Room("2", "Kitchen");
-        roomList.add(room);
-        room = new Room("1", "BedRoom");
-        roomList.add(room);
-        room = new Room("2", "Kitchen");
-        roomList.add(room);
-        room = new Room("1", "BedRoom");
-        roomList.add(room);
-        room = new Room("2", "Kitchen");
+        room = new Room("1", "Solar Panels");
         roomList.add(room);
 
         mAdapter.notifyDataSetChanged();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.activity_settings, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.activity_settings) {
+            Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

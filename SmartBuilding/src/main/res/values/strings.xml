@@ -1,12 +1,43 @@
 <resources>
     <string name="app_name">Smart Building</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="demo_content">Finding easier methods to monitor and control your electricity usage and keeping our Earth green!</string>
+    <string name="demo_title">Smart Building</string>
+    <string name="finish">Finish</string>
+    <string name="forgot_password">\" Forgot Password ?\"</string>
+    <string name="login">Login</string>
+    <string name="hi_user">Hi, User</string>
+    <string name="welcome_to_your_home">Welcome to your home</string>
+    <string name="bedroom">BedRoom</string>
+    <string name="temp">TEMP</string>
+    <string name="humid">HUMID</string>
+    <string name="key_upload_quality" translatable="false">key_upload_quality</string>
+    <string name="set_off_time">Set Off-Time</string>
+    <string name="limit_data_usage">limit_data_usage</string>
+    <string name="data_mgt">Data Usage Management</string>
+    <string name="prefs_restricted_mode">prefs_restricted_mode</string>
+    <string name="restricted_mode">Restricted Mode prevents any power changes.</string>
+    <string name="restricted_mode_description">Restricted Mode</string>
+
+
+    <string-array name="offtime">
+        <item>1 hours</item>
+        <item>2 hours</item>
+        <item>3 hours</item>
+        <item>5 hours</item>
+        <item>10 hours</item>
+    </string-array>
+
+    <string-array name="duration">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
 </resources>

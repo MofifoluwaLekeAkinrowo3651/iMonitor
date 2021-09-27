@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!--Smart Home
-   https://github.com/quintuslabs/SmartHome
-   Created on 27-OCT-2019.
-   Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com-->
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -41,7 +38,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Hi, Gopal"
+                        android:text="@string/hi_user"
                         android:textColor="@color/white"
                         android:textSize="16dp"
                         android:textStyle="bold" />
@@ -49,7 +46,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Welcome to your home"
+                        android:text="@string/welcome_to_your_home"
                         android:textColor="@color/white_70"
                         android:textSize="12dp"
                         android:textStyle="bold" />
@@ -61,8 +58,6 @@
                         android:clipToPadding="false"
                         android:nestedScrollingEnabled="false"
                         android:paddingBottom="120dp" />
-
-
                 </LinearLayout>
 
             </RelativeLayout>
@@ -70,17 +65,17 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="66dp"
             android:layout_alignParentBottom="true"
             android:background="@drawable/half_circle"
             android:orientation="horizontal"
             android:weightSum="5">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:id="@+id/home_ll"
+                android:layout_width="162dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:id="@+id/home_ll"
                 android:gravity="center">
 
                 <RelativeLayout
@@ -98,45 +93,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:id="@+id/time_ll"
-                android:gravity="center">
-
-                <RelativeLayout
-                    android:id="@+id/time_rl"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp">
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_centerInParent="true"
-                        android:background="@drawable/time" />
-                </RelativeLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center">
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/ic_plus" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/scene_ll"
-                android:gravity="center">
-
                 <RelativeLayout
-                    android:id="@+id/scene_rl"
+                    android:id="@+id/event_rl"
                     android:layout_width="50dp"
                     android:layout_height="50dp">
 
@@ -144,28 +108,37 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_centerInParent="true"
-                        android:background="@drawable/graph" />
+                        android:background="@drawable/bell" />
                 </RelativeLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:id="@+id/setting_ll"
+                android:layout_width="162dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center">
 
-                <RelativeLayout
-                    android:id="@+id/setting_rl"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp">
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/setting_rl"-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="50dp">-->
 
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_centerInParent="true"
-                        android:background="@drawable/settings" />
-                </RelativeLayout>
+<!--                    <ImageView-->
+<!--                        android:layout_width="30dp"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:layout_centerInParent="true"-->
+<!--                        android:background="@drawable/settings" />-->
+<!--                </RelativeLayout>-->
+
+                <ImageButton
+                    android:id="@+id/setting_rl"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/settings"
+                    android:src="@drawable/settings" />
+
             </LinearLayout>
 
 
