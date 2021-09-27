@@ -7,11 +7,13 @@ import android.view.ViewGroup;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 
 
 public class EventsActivity extends AppCompatActivity {
+
+    private String roomTemp, humidity;
+    private String fireStat;
+    private String doorStat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,5 +25,26 @@ public class EventsActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
+    }
+
+    private void setRoomTemp(String roomTemp)
+    {
+        this.roomTemp = roomTemp;
+    }
+
+    private void setHumidity(String humidity)
+    {
+        this.humidity = humidity;
+    }
+
+    private void setFireStat(String fireStat)
+    {
+        this.fireStat = fireStat;
+    }
+
+    private void setDoorStat(String doorStat)
+    {
+        this.doorStat = doorStat;
     }
 }
