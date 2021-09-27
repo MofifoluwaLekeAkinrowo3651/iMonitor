@@ -13,6 +13,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -119,5 +121,22 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+    
+    //Pop up Alert Dialog when back pressed
+    @Override
+    public void onBackPressed() {
+            new AlertDialog.Builder(this)
+                    .setMessage(R.string.exit_msg1)
+                    .setCancelable(false)
+                    .setPositiveButton(R.string.exit, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            MainActivity.super.onBackPressed();
+                        }
+                    })
+                    .setNegativeButton(R.string.stay, null)
+                    .show();
+        }
+    }
+
 
 }
