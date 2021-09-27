@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private RoomAdapter mAdapter;
 
     RelativeLayout home_rl;
-//    ImageButton setting_rl;
+    ImageButton setting_rl;
 
     public static void setWindowFlag(Activity activity, final int bits, boolean on) {
 
@@ -56,15 +57,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         home_rl = findViewById(R.id.home_rl);
-//        ImageButton setting_rl = findViewById(R.id.setting_rl);
+        ImageButton setting_rl = findViewById(R.id.setting_rl);
         recyclerView = findViewById(R.id.recycler_view);
 
         home_rl.setOnClickListener(v -> home_rl.setBackgroundResource(0));
 
-//        setting_rl.setOnClickListener(v -> {
-//            Intent i = new Intent(MainActivity.this, SettingsActivity.class);
-//            startActivity(i);
-//        });
+        setting_rl.setOnClickListener(v -> {
+            Intent i = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(i);
+        });
 
         mAdapter = new RoomAdapter(roomList, getApplicationContext());
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
