@@ -3,6 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Andrew/Documents/collegeStuff/fall2021/softwareProject/SmartBuilding/SmartBuilding/src/main/res/layout/activity_login.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/Andrew/Documents/collegeStuff/fall2021/softwareProject/SmartBuilding/SmartBuilding/src/main/res/layout/activity_main.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/Andrew/Documents/collegeStuff/fall2021/softwareProject/SmartBuilding/SmartBuilding/src/main/res/layout/activity_onboard.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/Andrew/Documents/collegeStuff/fall2021/softwareProject/SmartBuilding/SmartBuilding/src/main/res/layout/activity_room_details.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/Andrew/Documents/collegeStuff/fall2021/softwareProject/SmartBuilding/SmartBuilding/src/main/res/layout/activity_settings.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/Andrew/Documents/collegeStuff/fall2021/softwareProject/SmartBuilding/SmartBuilding/src/main/res/layout/content_main.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/Andrew/Documents/collegeStuff/fall2021/softwareProject/SmartBuilding/SmartBuilding/src/main/res/layout/events.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/Andrew/Documents/collegeStuff/fall2021/softwareProject/SmartBuilding/SmartBuilding/src/main/res/layout/fragment_first.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/Andrew/Documents/collegeStuff/fall2021/softwareProject/SmartBuilding/SmartBuilding/src/main/res/layout/home_row.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/Andrew/Documents/collegeStuff/fall2021/softwareProject/SmartBuilding/SmartBuilding/src/main/res/layout/onboarding_1.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/Andrew/Documents/collegeStuff/fall2021/softwareProject/SmartBuilding/SmartBuilding/src/main/res/layout/onboarding_3.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/Andrew/Documents/collegeStuff/fall2021/softwareProject/SmartBuilding/SmartBuilding/src/main/res/layout/onboarding_4.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/Andrew/Documents/collegeStuff/fall2021/softwareProject/SmartBuilding/SmartBuilding/src/main/res/layout/single_room_row.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/Andrew/Documents/collegeStuff/fall2021/softwareProject/SmartBuilding/SmartBuilding/src/main/res/layout/splashscreen.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/Andrew/Documents/collegeStuff/fall2021/softwareProject/SmartBuilding/SmartBuilding/src/main/res/menu/activity_settings.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/Andrew/Documents/collegeStuff/fall2021/softwareProject/SmartBuilding/SmartBuilding/src/main/res/menu/menu_main.xml" value="0.3307291666666667" />
         <entry key="..\:/Users/dieko/AndroidStudioProjects/SmartBuilding/SmartBuilding/src/main/res/drawable/custom_edittxt.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/dieko/AndroidStudioProjects/SmartBuilding/SmartBuilding/src/main/res/drawable/gradient_bg.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/dieko/AndroidStudioProjects/SmartBuilding/SmartBuilding/src/main/res/drawable/ic_chevron_left_black_24dp.xml" value="0.19583333333333333" />
@@ -24,7 +40,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
