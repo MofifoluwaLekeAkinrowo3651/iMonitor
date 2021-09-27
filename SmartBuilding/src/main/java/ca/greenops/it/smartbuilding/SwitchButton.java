@@ -19,6 +19,13 @@ import android.widget.Checkable;
 
 import ca.greenops.it.smartbuilding.R;
 
+/**
+ * Smart Building
+ * https://github.com/MofifoluwaLekeAkinrowo3651/SmartBuilding
+ * Created on 25-SEP-2021.
+ * Created by : Team greenOps : Mofifoluwa Leke-Akinrowo (N01343651), Andrew Fraser(N01309442), Bibek Dhakal(N01419953)
+ */
+
 public class SwitchButton extends View implements Checkable {
     private static final int DEFAULT_WIDTH = dp2pxInt(58);
     private static final int DEFAULT_HEIGHT = dp2pxInt(36);
