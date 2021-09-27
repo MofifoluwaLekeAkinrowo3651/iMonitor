@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+<!--    /**-->
+<!--    * Smart Building-->
+<!--    * https://github.com/MofifoluwaLekeAkinrowo3651/SmartBuilding-->
+<!--    * Created on 25-SEP-2021.-->
+<!--    * Created by : Team greenOps : Mofifoluwa Leke-Akinrowo (N01343651), Andrew Fraser(N01309442), Bibek Dhakal(N01419953)-->
+<!--    */-->
+
     <string name="app_name">Smarty</string>
     <string name="action_settings">Les Paramètres
 </string>
