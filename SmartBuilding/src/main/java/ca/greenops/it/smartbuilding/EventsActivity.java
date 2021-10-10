@@ -39,14 +39,7 @@ public class EventsActivity extends AppCompatActivity {
         String line1, line2,line3;
          line1 = getString(R.string.temp)+roomTemp+"\t"+getString(R.string.humid)+humidity;
 
-        if (doorStat.equals(R.string.open))
-        {
-            line2 = getString(R.string.doorOpen);
-        }
-        else
-        {
-            line2 = getString(R.string.doorClose);
-        }
+        line2 = getString(R.string.doorClose);
 
         if (fireStat.equals(getString(R.string.on)))
         {

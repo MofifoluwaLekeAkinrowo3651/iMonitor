@@ -41,6 +41,8 @@
     <string name="exit_msg1">Do you want to exit?</string>
     <string name="exit">Yes</string>
     <string name="stay">No</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
 
 
     <string-array name="offtime">
