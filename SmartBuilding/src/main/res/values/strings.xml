@@ -43,6 +43,13 @@
     <string name="stay">No</string>
     <string name="user_name">User Name</string>
     <string name="password">Password</string>
+    <string name="person">person</string>
+    <string name="demo_content2">Together we can save and make Earth greener!</string>
+    <string name="bed_room">Bed Room</string>
+    <string name="item_1">Item 1</string>
+    <string name="item_2">Item 2</string>
+    <string name="item_3">Item 3</string>
+    <string name="item_4">Item 4</string>
 
 
     <string-array name="offtime">

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/bg_5"
     tools:context="ca.greenops.it.smartbuilding.MainActivity">
 
     <RelativeLayout
@@ -18,7 +18,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="10dp">
@@ -48,7 +48,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/welcome_to_your_home"
                         android:textColor="@color/white_70"
-                        android:textSize="12dp"
+                        android:textSize="12sp"
                         android:textStyle="bold" />
 
                     <androidx.recyclerview.widget.RecyclerView

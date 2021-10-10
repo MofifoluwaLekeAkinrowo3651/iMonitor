@@ -39,5 +39,7 @@
     <string name="prefs_restricted_mode">prefs_restricted_mode</string>
     <string name="restricted_mode">Le mode restreint empêche tout changement de puissance.</string>
     <string name="restricted_mode_description">Mode restreint</string>
+    <string name="person">person</string>
+    <string name="demo_content2">Together we can save and make Earth greener!</string>
 
 </resources>

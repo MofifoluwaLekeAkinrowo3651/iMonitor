@@ -2,7 +2,6 @@ package ca.greenops.it.smartbuilding;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -11,9 +10,6 @@ import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
-
-import ca.greenops.it.smartbuilding.R;
-import ca.greenops.it.smartbuilding.LoginActivity;
 
 /**
  * Smart Building

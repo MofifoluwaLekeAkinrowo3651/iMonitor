@@ -3,21 +3,16 @@ package ca.greenops.it.smartbuilding;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import ca.greenops.it.smartbuilding.R;
 
 
 /**
@@ -51,23 +46,22 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-    }
-
-    public void onLoginClicked(View view) {
-
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
+    }
+
+   public void onLoginClicked(View view) {
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference();
 
-        String uname = String.valueOf(username.getText());
-        String pword = String.valueOf(password.getText());
+        String uname = username.getText().toString();
+        String pword = username.getText().toString();
 
         String details = "Username: " + uname + " Password: " + pword;
 
-        ref.setValue(details);
-
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-        finish();
-    }
+       ref.setValue(details);
+       startActivity(new Intent(getApplicationContext(), MainActivity.class));
+       finish();
+  }
 }
