@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,6 +32,7 @@ public class SingleRoomAdapter extends RecyclerView.Adapter<SingleRoomAdapter.My
         this.context = context;
     }
 
+    @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
@@ -45,7 +47,6 @@ public class SingleRoomAdapter extends RecyclerView.Adapter<SingleRoomAdapter.My
 
         holder.title.setText(room.getName());
 
-
     }
 
     @Override
@@ -53,7 +54,7 @@ public class SingleRoomAdapter extends RecyclerView.Adapter<SingleRoomAdapter.My
         return roomList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
         public CardView cardView;
 

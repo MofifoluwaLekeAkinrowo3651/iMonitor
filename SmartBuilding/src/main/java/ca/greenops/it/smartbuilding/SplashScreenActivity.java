@@ -25,44 +25,36 @@ import ca.greenops.it.smartbuilding.OnboardActivity;
  */
 
 public class SplashScreenActivity extends AppCompatActivity {
-    Animation animBounce, animZoomIn, animSlideIn;
-    LinearLayout linearLayout;
-    ImageView imageView;
-
+//    Animation animBounce, animZoomIn;
+//    LinearLayout linearLayout;
+//    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-            getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.backgroundColor));
-        }
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.backgroundColor));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen);
-        animZoomIn = AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.zoom_out);
-        animBounce = AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.bounce);
 
-        linearLayout = findViewById(R.id.linear_layout);
-        imageView = findViewById(R.id.image_view);
-
-        linearLayout.startAnimation(animBounce);
-        imageView.startAnimation(animZoomIn);
-
-
-        new Handler().postDelayed(new Runnable() {
+//        animZoomIn = AnimationUtils.loadAnimation(getApplicationContext(),
+//                R.anim.zoom_out);
+//        animBounce = AnimationUtils.loadAnimation(getApplicationContext(),
+//                R.anim.bounce);
+//
+//        linearLayout = findViewById(R.id.linear_layout);
+//        imageView = findViewById(R.id.image_view);
+//
+//        linearLayout.startAnimation(animBounce);
+//        imageView.startAnimation(animBounce);
 
 
-            @Override
-            public void run() {
-                // This method will be executed once the timer is over
-                Intent i = new Intent(SplashScreenActivity.this, OnboardActivity.class);
-                startActivity(i);
-                finish();
-                overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
-            }
-        }, 3000);
+        new Handler().postDelayed(() -> {
+            Intent i = new Intent(SplashScreenActivity.this, OnboardActivity.class);
+            startActivity(i);
+            finish();
+//            overridePendingTransition(R.anim.bounce, R.anim.bounce);
+            }, 3000);
 
 
     }
