@@ -5,17 +5,18 @@
     <item
         android:id="@+id/item1"
         android:title="@string/item_1"
+        android:icon="@drawable/camera_foreground"
         app:showAsAction="always" />
     <item
         android:id="@+id/item2"
         android:title="@string/item_2"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
     <item
         android:id="@+id/item3"
         android:title="@string/item_3"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
     <item
         android:id="@+id/item4"
         android:title="@string/item_4"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
 </menu>
