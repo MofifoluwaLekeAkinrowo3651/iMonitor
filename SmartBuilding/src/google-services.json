@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1097759153378",
+    "project_id": "greenops-smartbuilding",
+    "storage_bucket": "greenops-smartbuilding.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097759153378:android:398b81c955184228a592bb",
+        "android_client_info": {
+          "package_name": "ca.greenops.it.smartbuilding"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097759153378-opgaggv2srm3jti1ec8h09qmmca19hv4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf4jUiSSAVtKqj4wfnDgJr_nmvoTZmmvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097759153378-opgaggv2srm3jti1ec8h09qmmca19hv4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

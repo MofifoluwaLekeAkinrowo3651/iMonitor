@@ -15,6 +15,14 @@
     <string name="next">Suivant</string>
     <string name="previous">Précédent</string>
 
+    <string name="events">Événements</string>
+    <string name="open">Ouvert</string>
+    <string name="doorOpen">La porte est ouverte</string>
+    <string name="doorClose">La porte est fermée</string>
+    <string name="on">Au</string>
+    <string name="fireAlarmOn">L\'alarme incendie est activée</string>
+    <string name="fireAlarmOff">L\'alarme incendie est desactivée</string>
+
     <string name="demo_content">Trouver des méthodes plus simples pour surveiller et contrôler votre consommation d\'électricité et garder notre Terre verte!</string>
     <string name="demo_title">Bâtiment Intelligent</string>
     <string name="finish">Terminer</string>
