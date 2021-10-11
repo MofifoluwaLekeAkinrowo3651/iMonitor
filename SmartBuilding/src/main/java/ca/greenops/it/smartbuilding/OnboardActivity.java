@@ -34,12 +34,9 @@ public class OnboardActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.onboarding_view_pager);
         onboardingAdapter = new OnboardAdapter(this);
         viewPager.setAdapter(onboardingAdapter);
-        viewPager.setPageTransformer(false, new OnboardingPageTransformer());
 
     }
 
-
-    // Listener for next button press
     public void nextPage(View view) {
         if (view.getId() == R.id.button2) {
             if (viewPager.getCurrentItem() < onboardingAdapter.getCount() - 1) {

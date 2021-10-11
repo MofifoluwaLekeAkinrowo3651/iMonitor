@@ -98,6 +98,13 @@ public class MainActivity extends AppCompatActivity {
         mAdapter.notifyDataSetChanged();
     }
 
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater menuInflater = getMenuInflater();
+//        menuInflater.inflate(R.menu.activity_settings, menu);
+//        return true;
+//    }
+//
     //Pop up Alert Dialog when back pressed
     @Override
     public void onBackPressed() {

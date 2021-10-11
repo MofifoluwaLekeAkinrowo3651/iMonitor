@@ -1,9 +1,6 @@
 package ca.greenops.it.smartbuilding;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;

@@ -1,7 +1,6 @@
 package ca.greenops.it.smartbuilding;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
-import ca.greenops.it.smartbuilding.R;
-import ca.greenops.it.smartbuilding.Room;
-import ca.greenops.it.smartbuilding.RoomDetailsActivity;
 
 import java.util.List;
 
@@ -44,15 +39,8 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.MyViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
-        Room room = roomList.get(position);
-        holder.title.setText(room.getName());
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        holder.cardView.setOnClickListener(v -> {
-            Intent intent = new Intent(context, RoomDetailsActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent);
-        });
 
     }
 

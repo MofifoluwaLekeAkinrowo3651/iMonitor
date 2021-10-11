@@ -20,6 +20,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceFragmentCompat;
 
+import com.google.android.material.snackbar.Snackbar;
+
 /**
  * Smart Building
  * https://github.com/MofifoluwaLekeAkinrowo3651/SmartBuilding
@@ -93,6 +95,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
         if (requestCode == STORAGE_PERMISSION_CODE)  {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(getActivity(), "Permission GRANTED", Toast.LENGTH_SHORT).show();
