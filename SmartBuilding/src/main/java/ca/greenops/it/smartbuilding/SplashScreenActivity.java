@@ -25,9 +25,6 @@ import ca.greenops.it.smartbuilding.OnboardActivity;
  */
 
 public class SplashScreenActivity extends AppCompatActivity {
-//    Animation animBounce, animZoomIn;
-//    LinearLayout linearLayout;
-//    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,23 +34,11 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen);
 
-//        animZoomIn = AnimationUtils.loadAnimation(getApplicationContext(),
-//                R.anim.zoom_out);
-//        animBounce = AnimationUtils.loadAnimation(getApplicationContext(),
-//                R.anim.bounce);
-//
-//        linearLayout = findViewById(R.id.linear_layout);
-//        imageView = findViewById(R.id.image_view);
-//
-//        linearLayout.startAnimation(animBounce);
-//        imageView.startAnimation(animBounce);
-
 
         new Handler().postDelayed(() -> {
             Intent i = new Intent(SplashScreenActivity.this, OnboardActivity.class);
             startActivity(i);
             finish();
-//            overridePendingTransition(R.anim.bounce, R.anim.bounce);
             }, 3000);
 
 
