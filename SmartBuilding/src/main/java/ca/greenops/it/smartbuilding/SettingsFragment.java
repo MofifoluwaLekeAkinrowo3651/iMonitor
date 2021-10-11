@@ -1,14 +1,23 @@
 package ca.greenops.it.smartbuilding;
 
+import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceFragmentCompat;
 
 /**
@@ -19,6 +28,8 @@ import androidx.preference.PreferenceFragmentCompat;
  */
 
 public class SettingsFragment extends PreferenceFragmentCompat {
+    private final int STORAGE_PERMISSION_CODE = 1;
+
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.preference);
@@ -40,5 +51,55 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.menu, menu);
         super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.item1) {
+            verify();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void verify(){
+        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
+            Toast.makeText(getContext(),"Permission Granted", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+            startActivity(intent);
+        } else {
+           requestPermission();
+        }
+    }
+
+    private void requestPermission() {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
+                Manifest.permission.CAMERA)) {
+
+            new AlertDialog.Builder(getContext())
+                    .setTitle("Permission Required!")
+                    .setMessage("Permission for functionality is required")
+                    .setPositiveButton("OK", (dialog, which) -> ActivityCompat.requestPermissions(getActivity(),
+                            new String[] {Manifest.permission.CAMERA}, STORAGE_PERMISSION_CODE))
+                    .setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss())
+                    .create().show();
+
+        } else {
+            ActivityCompat.requestPermissions(getActivity(), new String[] {Manifest.permission.CAMERA}, STORAGE_PERMISSION_CODE);
+            Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == STORAGE_PERMISSION_CODE)  {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(getActivity(), "Permission GRANTED", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getActivity(), "Permission DENIED", Toast.LENGTH_SHORT).show();
+            }
+        }
+
     }
 }

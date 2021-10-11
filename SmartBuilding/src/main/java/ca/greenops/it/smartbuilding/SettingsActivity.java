@@ -21,20 +21,11 @@ public class SettingsActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_settings);
 
-            ActionBar actionBar = this.getSupportActionBar();
+//            ActionBar actionBar = this.getSupportActionBar();
 
-            if (actionBar != null) {
-                actionBar.setDisplayHomeAsUpEnabled(true);
-            }
-        }
-
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
-            int id = item.getItemId();
-            if (id == android.R.id.home) {
-                NavUtils.navigateUpFromSameTask(this);
-            }
-            return super.onOptionsItemSelected(item);
+//            if (actionBar != null) {
+//                actionBar.setDisplayHomeAsUpEnabled(true);
+//            }
         }
     }
 
