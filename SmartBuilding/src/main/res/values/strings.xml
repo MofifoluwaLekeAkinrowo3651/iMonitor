@@ -50,6 +50,11 @@
     <string name="item_2">Item 2</string>
     <string name="item_3">Item 3</string>
     <string name="item_4">Item 4</string>
+    <string name="potrait_lock">Potrait Lock</string>
+    <string name="account">Account</string>
+    <string name="sync_option">Sync Option</string>
+    <string name="help_and_support">Help and Support</string>
+    <string name="profile">Profile</string>
 
 
     <string-array name="offtime">
