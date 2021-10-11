@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         String uname = username.getText().toString();
         String pword = username.getText().toString();
 
-        String details = "Username: " + uname + " Password: " + pword;
+        String details = getString(R.string.username) + uname + getString(R.string.pass) + pword;
 
        ref.setValue(details);
        startActivity(new Intent(getApplicationContext(), MainActivity.class));

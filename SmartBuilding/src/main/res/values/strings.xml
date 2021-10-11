@@ -55,6 +55,15 @@
     <string name="sync_option">Sync Option</string>
     <string name="help_and_support">Help and Support</string>
     <string name="profile">Profile</string>
+    <string name="solarPanels">Solar Panels</string>
+    <string name="lockDoord">Lock Doors</string>
+    <string name="dining">Dining</string>
+    <string name="hallway">Hallway</string>
+    <string name="kitchen">Kitchen</string>
+    <string name="bathroom">Bathroom</string>
+    <string name="bedroom">BedRoom</string>
+    <string name="username">\"Username: \"</string>
+    <string name="pass">\" Password: \"</string>
 
 
     <string-array name="offtime">

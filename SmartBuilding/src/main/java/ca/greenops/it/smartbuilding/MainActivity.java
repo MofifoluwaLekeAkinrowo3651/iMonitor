@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        //make fully Android Transparent Status bar
         setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false);
         getWindow().setStatusBarColor(Color.TRANSPARENT);
         super.onCreate(savedInstanceState);
@@ -81,19 +80,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void prepareRoomData() {
-        Room room = new Room("1", "BedRoom");
+        Room room = new Room("1", getString(R.string.bedroom));
         roomList.add(room);
-        room = new Room("2", "Kitchen");
+        room = new Room("2", getString(R.string.kitchen));
         roomList.add(room);
-        room = new Room("1", "Bathroom");
+        room = new Room("1", getString(R.string.bathroom));
         roomList.add(room);
-        room = new Room("2", "Hallway");
+        room = new Room("2", getString(R.string.hallway));
         roomList.add(room);
-        room = new Room("1", "Dining");
+        room = new Room("1", getString(R.string.dining));
         roomList.add(room);
-        room = new Room("2", "Lock Doors");
+        room = new Room("2", getString(R.string.lockDoord));
         roomList.add(room);
-        room = new Room("1", "Solar Panels");
+        room = new Room("1", getString(R.string.solarPanels));
         roomList.add(room);
 
         mAdapter.notifyDataSetChanged();
