@@ -17,7 +17,7 @@ public class EventsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.events);
+        setContentView(R.layout.activity_events);
 
         ActionBar actionBar = this.getSupportActionBar();
 

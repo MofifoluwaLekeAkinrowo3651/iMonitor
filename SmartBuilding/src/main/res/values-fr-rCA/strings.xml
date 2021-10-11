@@ -33,13 +33,13 @@
     <string name="humid">HUMID</string>
     <string name="bedroom">Chambre</string>
     <string name="temp">Température</string>
-    <string name="set_off_time">Set Off-Time</string>
+    <string name="set_off_time">Définir l\'heure d'arrêt</string>
     <string name="limit_data_usage">limiter_l\'utilisation_des_données</string>
     <string name="data_mgt">Gestion de données</string>
     <string name="prefs_restricted_mode">prefs_restricted_mode</string>
     <string name="restricted_mode">Le mode restreint empêche tout changement de puissance.</string>
     <string name="restricted_mode_description">Mode restreint</string>
-    <string name="person">person</string>
-    <string name="demo_content2">Together we can save and make Earth greener!</string>
+    <string name="person">Personne</string>
+    <string name="demo_content2">Ensemble, nous pouvons sauver et rendre la Terre plus verte !</string>
 
 </resources>
