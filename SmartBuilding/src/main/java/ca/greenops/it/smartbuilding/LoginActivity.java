@@ -1,6 +1,8 @@
 package ca.greenops.it.smartbuilding;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -61,7 +63,19 @@ public class LoginActivity extends AppCompatActivity {
         String details = getString(R.string.username) + uname + getString(R.string.pass) + pword;
 
        ref.setValue(details);
-       startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
+       if (!details.equals(getString(R.string.username) + uname + getString(R.string.pass) + pword))
+       {
+           new AlertDialog.Builder(this)
+                   .setTitle(R.string.wrongLoginTitle)
+                   .setMessage(R.string.wrongLogin)
+                   .setCancelable(false)
+                   .setPositiveButton(R.string.ok,null)
+                   .show();
+       }
+       else {
+           startActivity(new Intent(getApplicationContext(), MainActivity.class));
+       }
        finish();
   }
 }

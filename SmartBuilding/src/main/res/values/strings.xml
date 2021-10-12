@@ -28,7 +28,7 @@
     <string name="login">Login</string>
     <string name="hi_user">Hi, User</string>
     <string name="welcome_to_your_home">Welcome to your home</string>
-    <string name="bedroom">BedRoom</string>
+    <!--<string name="bedroom">BedRoom</string>-->
     <string name="temp">TEMP</string>
     <string name="humid">HUMID</string>
     <string name="key_upload_quality" translatable="false">key_upload_quality</string>
@@ -70,6 +70,8 @@
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="deny">Permission DENIED</string>
+    <string name="wrongLogin">Your username or your password is Incorrect. Please enter a different combination</string>
+    <string name="wrongLoginTitle">wrong username/password</string>
 
 
     <string-array name="offtime">
