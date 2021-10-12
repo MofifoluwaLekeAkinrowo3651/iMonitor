@@ -64,6 +64,12 @@
     <string name="bedroom">BedRoom</string>
     <string name="username">\"Username: \"</string>
     <string name="pass">\" Password: \"</string>
+    <string name="grant">Permission GRANTED</string>
+    <string name="msg1">Permission Required!</string>
+    <string name="msg2">Permission for functionality is required</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="deny">Permission DENIED</string>
 
 
     <string-array name="offtime">

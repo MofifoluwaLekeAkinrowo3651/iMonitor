@@ -79,11 +79,11 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                 Manifest.permission.CAMERA)) {
 
             new AlertDialog.Builder(getContext())
-                    .setTitle("Permission Required!")
-                    .setMessage("Permission for functionality is required")
-                    .setPositiveButton("OK", (dialog, which) -> ActivityCompat.requestPermissions(getActivity(),
+                    .setTitle(R.string.msg1)
+                    .setMessage(R.string.msg2)
+                    .setPositiveButton(R.string.ok, (dialog, which) -> ActivityCompat.requestPermissions(getActivity(),
                             new String[] {Manifest.permission.CAMERA}, STORAGE_PERMISSION_CODE))
-                    .setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss())
+                    .setNegativeButton(R.string.cancel, (dialog, which) -> dialog.dismiss())
                     .create().show();
 
         } else {
@@ -98,9 +98,9 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
         if (requestCode == STORAGE_PERMISSION_CODE)  {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(getActivity(), "Permission GRANTED", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.grant, Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(getActivity(), "Permission DENIED", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.deny, Toast.LENGTH_SHORT).show();
             }
         }
 
