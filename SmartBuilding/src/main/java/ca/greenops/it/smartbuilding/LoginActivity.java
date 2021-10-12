@@ -67,6 +67,7 @@ public class LoginActivity extends AppCompatActivity {
        if (!details.equals(getString(R.string.username) + uname + getString(R.string.pass) + pword))
        {
            new AlertDialog.Builder(this)
+                   .setIcon(R.drawable.alert)
                    .setTitle(R.string.wrongLoginTitle)
                    .setMessage(R.string.wrongLogin)
                    .setCancelable(false)
