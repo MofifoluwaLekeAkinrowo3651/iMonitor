@@ -33,7 +33,7 @@
     <string name="humid">HUMID</string>
     <string name="bedroom">Chambre</string>
     <string name="temp">Température</string>
-    <string name="set_off_time">hello</string>
+    <string name="set_off_time">Définir l heure d arrêt</string>
     <string name="limit_data_usage">limiter_l\'utilisation_des_données</string>
     <string name="data_mgt">Gestion de données</string>
     <string name="prefs_restricted_mode">prefs_restricted_mode</string>
