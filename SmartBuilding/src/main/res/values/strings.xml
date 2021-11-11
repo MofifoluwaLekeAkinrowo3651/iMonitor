@@ -28,7 +28,7 @@
     <string name="login">Login</string>
     <string name="hi_user">Hi, User</string>
     <string name="welcome_to_your_home">Welcome to your home</string>
-    <!--<string name="bedroom">BedRoom</string>-->
+    <string name="bedroom">BedRoom</string>
     <string name="temp">TEMP</string>
     <string name="humid">HUMID</string>
     <string name="key_upload_quality" translatable="false">key_upload_quality</string>
@@ -42,14 +42,13 @@
     <string name="exit">Yes</string>
     <string name="stay">No</string>
     <string name="user_name">User Name</string>
-    <string name="password">Password</string>
     <string name="person">person</string>
     <string name="demo_content2">Together we can save and make Earth greener!</string>
     <string name="bed_room">Bed Room</string>
     <string name="item_1">Runtime Func</string>
-    <string name="item_2">Item 2</string>
-    <string name="item_3">Item 3</string>
-    <string name="item_4">Item 4</string>
+    <string name="item_2" translatable="false">Item 2</string>
+    <string name="item_3" translatable="false">Item 3</string>
+    <string name="item_4" translatable="false">Item 4</string>
     <string name="portrait_lock">Portrait Lock</string>
     <string name="account">Account</string>
     <string name="sync_option">Sync Option</string>
@@ -72,6 +71,7 @@
     <string name="deny">Permission DENIED</string>
     <string name="wrongLogin">Your username or your password is Incorrect. Please enter a different combination</string>
     <string name="wrongLoginTitle">wrong username/password</string>
+    <string name="password">Password</string>
 
 
     <string-array name="offtime">
@@ -89,5 +89,6 @@
         <item>3</item>
         <item>4</item>
     </string-array>
+
 
 </resources>
