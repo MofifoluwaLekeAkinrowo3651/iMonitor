@@ -22,7 +22,7 @@
         <activity
             android:name="ca.greenops.it.smartbuilding.SplashScreenActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -41,10 +41,13 @@
             android:name="ca.greenops.it.smartbuilding.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
+        <activity android:name=".ProfileActivity" />
+
         <activity
             android:name=".SettingsActivity"
             android:label="@string/action_settings"
             android:parentActivityName=".MainActivity">
+
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
