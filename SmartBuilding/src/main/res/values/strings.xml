@@ -69,10 +69,11 @@
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="deny">Permission DENIED</string>
-    <string name="wrongLogin">Your username or your password is Incorrect. Please enter a different combination</string>
-    <string name="wrongLoginTitle">wrong username/password</string>
+    <string name="wrongLogin">Your Username or your Password is incorrect. Please enter again</string>
+    <string name="wrongLoginTitle">Incorrect Password</string>
     <string name="password">Password</string>
-    <string name="google_login" translatable="false">Google Login</string>
+    <string name="google_login">Google Login</string>
+    <string name="remember_me">Remember Me</string>
 
 
     <string-array name="offtime">

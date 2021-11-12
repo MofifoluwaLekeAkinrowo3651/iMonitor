@@ -3,12 +3,14 @@ package ca.greenops.it.smartbuilding;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -36,6 +38,9 @@ public class LoginActivity extends AppCompatActivity {
     EditText username, password;
     SignInButton signInButton;
     GoogleSignInClient mGoogleSignInClient;
+    CheckBox rememberMe;
+    SharedPreferences sharedPref;
+    SharedPreferences.Editor edit;
     static final int RC_SIGN_IN = 0;
 
     public static void setWindowFlag(Activity activity, final int bits, boolean on) {
@@ -63,6 +68,14 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         signInButton = findViewById(R.id.GoogleSignin);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
+        rememberMe = findViewById(R.id.rememberme);
+        sharedPref = getSharedPreferences("LoginPref", MODE_PRIVATE);
+
+        String usernames = sharedPref.getString("username", "");
+        String passwords = sharedPref.getString("passwords", "");
+
+        username.setText(usernames);
+        password.setText(passwords);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -75,24 +88,33 @@ public class LoginActivity extends AppCompatActivity {
                 case R.id.GoogleSignin:
                     signIn();
                     break;
+            }
+
+        if(rememberMe.isChecked()){
+                edit.putString("username",username.getText().toString());
+                edit.putString("password",password.getText().toString());
+        }else{
+                edit.putString("username","");
+                edit.putString("password","");
         }
-    });
+            edit.commit();
+            Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+            startActivity(intent);
+        });
     }
 
    public void onLoginClicked(View view) {
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference();
+       FirebaseDatabase database = FirebaseDatabase.getInstance();
+       DatabaseReference ref = database.getReference();
 
-        String uname = username.getText().toString();
-        String passWord = username.getText().toString();
-
-        String details = getString(R.string.username) + uname + getString(R.string.pass) + passWord;
+       String uname = username.getText().toString();
+       String passWord = username.getText().toString();
+       String details = getString(R.string.username) + uname + getString(R.string.pass) + passWord;
 
        ref.setValue(details);
 
-       if (!details.equals(getString(R.string.username) + uname + getString(R.string.pass) + passWord))
-       {
+       if (uname.isEmpty() && passWord.isEmpty()) {
            new AlertDialog.Builder(this)
                    .setIcon(R.drawable.alert)
                    .setTitle(R.string.wrongLoginTitle)
@@ -101,10 +123,17 @@ public class LoginActivity extends AppCompatActivity {
                    .setPositiveButton(R.string.ok,null)
                    .show();
        }
-       else {
+       if (uname.isEmpty() || passWord.isEmpty()) {
+           new AlertDialog.Builder(this)
+                   .setIcon(R.drawable.alert)
+                   .setTitle(R.string.wrongLoginTitle)
+                   .setMessage(R.string.wrongLogin)
+                   .setCancelable(false)
+                   .setPositiveButton(R.string.ok,null)
+                   .show();
+       } else {
            startActivity(new Intent(getApplicationContext(), MainActivity.class));
        }
-       finish();
   }
 
     private void signIn() {

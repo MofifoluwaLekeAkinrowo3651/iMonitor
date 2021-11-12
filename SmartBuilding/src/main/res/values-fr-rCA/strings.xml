@@ -69,6 +69,9 @@
     <string name="deny">permission refusée</string>
     <string name="wrongLogin">Votre nom d\'utilisateur ou votre mot de passe est incorrect. Veuillez saisir une combinaison différente</string>
     <string name="wrongLoginTitle">nom d\'utilisateur incorrect / mot de passe</string>
-    <string name="password">Password</string>
+    <string name="password">Le mot de passe</string>
+    <string name="google_login">Connexion Google</string>
+    <string name="remember_me">Souviens-toi de Moi</string>
+
 
 </resources>
