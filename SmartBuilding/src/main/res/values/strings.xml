@@ -47,6 +47,7 @@
     <string name="bed_room">Bed Room</string>
     <string name="item_1">Runtime Func</string>
     <string name="user_review">User Review</string>
+    <string name="review">Review</string>
     <string name="item_3" translatable="false">Item 3</string>
     <string name="item_4" translatable="false">Item 4</string>
     <string name="portrait_lock">Portrait Lock</string>
