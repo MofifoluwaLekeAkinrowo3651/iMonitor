@@ -41,8 +41,6 @@
             android:name="ca.greenops.it.smartbuilding.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name=".ProfileActivity" />
-
         <activity
             android:name=".SettingsActivity"
             android:label="@string/action_settings"

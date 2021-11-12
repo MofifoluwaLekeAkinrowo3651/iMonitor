@@ -70,14 +70,11 @@ public class LoginActivity extends AppCompatActivity {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switch (view.getId()) {
-                    case R.id.GoogleSignin:
-                        signIn();
-                        break;
-            }
+        signInButton.setOnClickListener(view -> {
+            switch (view.getId()) {
+                case R.id.GoogleSignin:
+                    signIn();
+                    break;
         }
     });
     }
@@ -110,7 +107,6 @@ public class LoginActivity extends AppCompatActivity {
        finish();
   }
 
-
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -129,12 +125,15 @@ public class LoginActivity extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             Toast.makeText(this, "Sign-in Successful", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, ProfileActivity.class);
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } catch (ApiException e) {
             Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
         }
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(intent);
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -142,7 +141,7 @@ public class LoginActivity extends AppCompatActivity {
         if(account!=null)
         {
             Toast.makeText(this, "User already Signed-in", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(getApplicationContext(),ProfileActivity.class);
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
             startActivity(intent);
         }
     }
