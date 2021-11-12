@@ -46,7 +46,7 @@
     <string name="demo_content2">Together we can save and make Earth greener!</string>
     <string name="bed_room">Bed Room</string>
     <string name="item_1">Runtime Func</string>
-    <string name="user_review">User Review</string>
+    <string name="user_review" translatable="false">User Review</string>
     <string name="item_3" translatable="false">Item 3</string>
     <string name="item_4" translatable="false">Item 4</string>
     <string name="portrait_lock">Portrait Lock</string>
@@ -72,6 +72,7 @@
     <string name="wrongLogin">Your username or your password is Incorrect. Please enter a different combination</string>
     <string name="wrongLoginTitle">wrong username/password</string>
     <string name="password">Password</string>
+    <string name="google_login" translatable="false">Google Login</string>
 
 
     <string-array name="offtime">
