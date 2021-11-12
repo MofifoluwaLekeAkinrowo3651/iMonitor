@@ -32,7 +32,7 @@
     <string name="temp">TEMP</string>
     <string name="humid">HUMID</string>
     <string name="key_upload_quality" translatable="false">key_upload_quality</string>
-    <string name="set_off_time">Set Off-Time</string>
+    <string name="set_off_time" translatable="false">Set Off-Time</string>
     <string name="limit_data_usage">limit_data_usage</string>
     <string name="data_mgt">Data Usage Management</string>
     <string name="prefs_restricted_mode">prefs_restricted_mode</string>

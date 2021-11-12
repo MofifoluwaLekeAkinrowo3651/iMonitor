@@ -33,7 +33,7 @@
     <string name="humid">HUMID</string>
     <string name="bedroom">Chambre</string>
     <string name="temp">Température</string>
-    <string name="set_off_time">Définir l\'heure d'arrêt</string>
+<!--    <string name="set_off_time">Definir l\'heure d'arret</string>-->
     <string name="limit_data_usage">limiter_l\'utilisation_des_données</string>
     <string name="data_mgt">Gestion de données</string>
     <string name="prefs_restricted_mode">prefs_restricted_mode</string>
@@ -51,6 +51,7 @@
     <string name="account">Compte</string>
     <string name="sync_option">option de synchronisation</string>
     <string name="help_and_support">aide et soutien</string>
+
     <string name="profile">profil</string>
     <string name="solarPanels">panneaux solaires</string>
     <string name="lockDoord">verrouiller les portes</string>
