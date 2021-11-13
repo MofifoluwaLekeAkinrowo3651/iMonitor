@@ -120,7 +120,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     }
 
    public void onLoginClicked(View view) {
-
        FirebaseDatabase database = FirebaseDatabase.getInstance();
        DatabaseReference ref = database.getReference();
 
@@ -130,14 +129,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
        ref.setValue(details);
 
-//       if(rememberMe.isChecked()){
-//           edit.putString("username",username.getText().toString());
-//           edit.putString("password",password.getText().toString());
-//       }else{
-//           edit.putString("username","");
-//           edit.putString("password","");
-//       }
-//       edit.commit();
+       rememberMe();
 
        if (uname.isEmpty() && passWord.isEmpty()) {
            new AlertDialog.Builder(this)
@@ -160,9 +152,19 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
            Intent i = new Intent(getApplicationContext(), MainActivity.class);
            i.putExtra("username", uname);
            startActivity(i);
-
        }
   }
+
+    private void rememberMe() {
+        if(rememberMe.isChecked()){
+           edit.putString("username",username.getText().toString());
+           edit.putString("password",password.getText().toString());
+        }else{
+           edit.putString("username","");
+           edit.putString("password","");
+        }
+        edit.commit();
+    }
 
     private void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
