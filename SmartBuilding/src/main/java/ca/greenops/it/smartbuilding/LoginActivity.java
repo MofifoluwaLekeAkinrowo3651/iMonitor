@@ -124,12 +124,12 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
        FirebaseDatabase database = FirebaseDatabase.getInstance();
        DatabaseReference ref = database.getReference();
        String uname = username.getText().toString();
-       String passWord = username.getText().toString();
+       String passWord = password.getText().toString();
        String details = getString(R.string.username) + uname + getString(R.string.pass) + passWord;
 
        ref.setValue(details);
 
-       if (uname.isEmpty() && passWord.isEmpty()) {
+       if (uname.isEmpty()){
            new AlertDialog.Builder(this)
                    .setIcon(R.drawable.alert)
                    .setTitle(R.string.wrongLoginTitle)
@@ -138,7 +138,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                    .setPositiveButton(R.string.ok,null)
                    .show();
        }
-       if (uname.isEmpty() || passWord.isEmpty()) {
+       else if (passWord.isEmpty()) {
            new AlertDialog.Builder(this)
                    .setIcon(R.drawable.alert)
                    .setTitle(R.string.wrongLoginTitle)
