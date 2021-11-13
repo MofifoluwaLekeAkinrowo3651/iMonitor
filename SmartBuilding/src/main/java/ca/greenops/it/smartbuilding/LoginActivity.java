@@ -123,13 +123,11 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
    public void onLoginClicked(View view) {
        FirebaseDatabase database = FirebaseDatabase.getInstance();
        DatabaseReference ref = database.getReference();
-
        String uname = username.getText().toString();
        String passWord = username.getText().toString();
        String details = getString(R.string.username) + uname + getString(R.string.pass) + passWord;
 
        ref.setValue(details);
-//       rememberMe();
 
        if (uname.isEmpty() && passWord.isEmpty()) {
            new AlertDialog.Builder(this)
