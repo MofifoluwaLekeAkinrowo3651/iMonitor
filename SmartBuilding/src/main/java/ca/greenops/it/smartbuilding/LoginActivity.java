@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -30,6 +31,8 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -53,6 +56,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     CheckBox rememberMe;
     SharedPreferences sharedPref;
     SharedPreferences.Editor edit;
+    ProgressDialog progressDialog;
     static final int RC_SIGN_IN = 0;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener authListen;
@@ -86,6 +90,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         rememberMe = findViewById(R.id.rememberme);
         sharedPref = getSharedPreferences("LoginPref", MODE_PRIVATE);
 
+        progressDialog = new ProgressDialog(LoginActivity.this);
         mAuth = FirebaseAuth.getInstance();
         authListen = firebaseAuth -> {
 
@@ -147,43 +152,58 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                    .setPositiveButton(R.string.ok,null)
                    .show();
        } else {
-           Intent i = new Intent(getApplicationContext(), MainActivity.class);
-           i.putExtra("username", uname);
-           startActivity(i);
+           progressDialog.setTitle("Login");
+           progressDialog.setMessage("Logging in...");
+           progressDialog.setCanceledOnTouchOutside(false);
+           progressDialog.show();
+
+           mAuth.signInWithEmailAndPassword(uname, passWord)
+           .addOnCompleteListener(task -> {
+               if (task.isSuccessful()) {
+                   Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                   i.putExtra("username", uname);
+                   startActivity(i);
+                   progressDialog.dismiss();
+               } else {
+                   progressDialog.dismiss();
+                   Snackbar.make(view, "Couldn't Log in. Try again later", BaseTransientBottomBar.LENGTH_LONG)
+                           .show();
+               }
+           });
        }
   }
 
-    private void rememberMe() {
-        if(rememberMe.isChecked()){
-           edit.putString("username",username.getText().toString());
-           edit.putString("password",password.getText().toString());
-        }else{
-           edit.putString("username","");
-           edit.putString("password","");
-        }
-        edit.commit();
-    }
+//    private void rememberMe() {
+//        if(rememberMe.isChecked()){
+//           edit.putString("username",username.getText().toString());
+//           edit.putString("password",password.getText().toString());
+//        }else{
+//           edit.putString("username","");
+//           edit.putString("password","");
+//        }
+//        edit.commit();
+//    }
 
     private void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
-    private void createAccount(String email, String password) {
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-                        Log.d(EP, "createUserWithEmail:success");
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        updateUI(user);
-                    } else {
-                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                        Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                Toast.LENGTH_SHORT).show();
-                        updateUI(null);
-                    }
-                });
-    }
+//    private void createAccount(String email, String password) {
+//        mAuth.createUserWithEmailAndPassword(email, password)
+//                .addOnCompleteListener(this, task -> {
+//                    if (task.isSuccessful()) {
+//                        Log.d(EP, "createUserWithEmail:success");
+//                        FirebaseUser user = mAuth.getCurrentUser();
+//                        updateUI(user);
+//                    } else {
+//                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
+//                        Toast.makeText(LoginActivity.this, "Authentication failed.",
+//                                Toast.LENGTH_SHORT).show();
+//                        updateUI(null);
+//                    }
+//                });
+//    }
 
     private void signIn(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
@@ -200,16 +220,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     }
                 });
     }
-
-    private void sendEmailVerification() {
-        final FirebaseUser user = mAuth.getCurrentUser();
-        user.sendEmailVerification()
-                .addOnCompleteListener(this, task -> {
-                    // Email sent
-                });
-    }
-
-    private void reload() { }
 
     private void updateUI(FirebaseUser user) {
     }
@@ -259,7 +269,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser firebaseUser = mAuth.getCurrentUser();
         if (authListen != null) {
             mAuth.getInstance().signOut();
         }
