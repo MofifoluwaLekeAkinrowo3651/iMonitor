@@ -36,9 +36,9 @@
                         app:civ_circle_background_color="@color/white" />
 
                     <TextView
+                        android:id="@+id/hiuser"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/hi_user"
                         android:textColor="@color/white"
                         android:textSize="16dp"
                         android:textStyle="bold" />

@@ -132,7 +132,10 @@ public class LoginActivity extends AppCompatActivity {
                    .setPositiveButton(R.string.ok,null)
                    .show();
        } else {
-           startActivity(new Intent(getApplicationContext(), MainActivity.class));
+           Intent i = new Intent(getApplicationContext(), MainActivity.class);
+           i.putExtra("username", uname);
+           startActivity(i);
+
        }
   }
 

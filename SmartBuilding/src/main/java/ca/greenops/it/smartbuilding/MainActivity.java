@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private final List<Room> roomList = new ArrayList<>();
     private RecyclerView recyclerView;
     private RoomAdapter mAdapter;
-
+    TextView welcome;
     RelativeLayout home_rl;
 
     public static void setWindowFlag(Activity activity, final int bits, boolean on) {
@@ -62,6 +63,11 @@ public class MainActivity extends AppCompatActivity {
         home_rl = findViewById(R.id.home_rl);
         ImageButton setting_rl = findViewById(R.id.setting_rl);
         recyclerView = findViewById(R.id.recycler_view);
+        welcome = findViewById(R.id.hiuser);
+
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("username");
+        welcome.setText("Hi " + name);
 
         home_rl.setOnClickListener(v -> home_rl.setBackgroundResource(0));
 
