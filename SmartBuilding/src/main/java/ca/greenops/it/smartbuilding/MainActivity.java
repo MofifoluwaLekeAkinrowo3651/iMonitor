@@ -148,7 +148,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     .setCancelable(false)
                     .setPositiveButton(R.string.exit, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-                            MainActivity.super.onBackPressed();
+                            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                            startActivity(intent);
                         }
                     })
                     .setNegativeButton(R.string.stay, null)
