@@ -15,10 +15,10 @@ tools:context="ca.greenops.it.smartbuilding.SettingsActivity">
         android:textAppearance="@style/Text1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.268"
+        app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298"
+        app:layout_constraintVertical_bias="0.338"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Button
@@ -29,10 +29,10 @@ tools:context="ca.greenops.it.smartbuilding.SettingsActivity">
         android:textAppearance="@style/Text1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintHorizontal_bias="0.202"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.199" />
+        app:layout_constraintVertical_bias="0.249" />
 
     <Button
         android:id="@+id/button4"
@@ -45,7 +45,7 @@ tools:context="ca.greenops.it.smartbuilding.SettingsActivity">
         app:layout_constraintHorizontal_bias="0.245"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375" />
+        app:layout_constraintVertical_bias="0.434" />
 
     <Button
         android:id="@+id/button5"
@@ -58,7 +58,7 @@ tools:context="ca.greenops.it.smartbuilding.SettingsActivity">
         app:layout_constraintHorizontal_bias="0.31"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.544" />
 
     <Button
         android:id="@+id/button6"
@@ -68,9 +68,17 @@ tools:context="ca.greenops.it.smartbuilding.SettingsActivity">
         android:textAppearance="@style/Text1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.111" />
+        app:layout_constraintVertical_bias="0.148" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/settingsfrag"
+        android:name="ca.greenops.it.smartbuilding.SettingsFragment"
+        android:layout_width="412dp"
+        android:layout_height="62dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

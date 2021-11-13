@@ -20,6 +20,8 @@
     <string name="on">ON</string>
     <string name="fireAlarmOn">FIRE ALARM IS ON</string>
     <string name="fireAlarmOff">FIRE ALARM IS OFF</string>
+    <string name="dining">Dining</string>
+    <string name="bathroom">Bathroom</string>
 
     <string name="demo_content">Finding easier methods to monitor and control your electricity usage and keeping our Earth green!</string>
     <string name="demo_title">Smart Building</string>
@@ -28,7 +30,7 @@
     <string name="login">Login</string>
     <string name="hi_user">Hi, User</string>
     <string name="welcome_to_your_home">Welcome to your home</string>
-    <string name="bedroom">BedRoom</string>
+    <string name="bedroom">BedRoom Lights</string>
     <string name="temp">TEMP</string>
     <string name="humid">HUMID</string>
     <string name="key_upload_quality" translatable="false">key_upload_quality</string>
@@ -54,12 +56,10 @@
     <string name="sync_option">Sync Option</string>
     <string name="help_and_support">Help and Support</string>
     <string name="profile">Profile</string>
-    <string name="solarPanels">Solar Panels</string>
-    <string name="lockDoord">Lock Doors</string>
-    <string name="dining">Dining</string>
-    <string name="hallway">Hallway</string>
-    <string name="kitchen">Kitchen</string>
-    <string name="bathroom">Bathroom</string>
+    <string name="solarPanels">Fire|Smoke Detector</string>
+    <string name="lockDoord">Security Locks</string>
+    <string name="hallway">Hallway Lights</string>
+    <string name="kitchen">Kitchen Lights</string>
 <!--    <string name="bedroom">BedRoom</string>-->
     <string name="username">\"Username: \"</string>
     <string name="pass">\" Password: \"</string>
@@ -70,10 +70,12 @@
     <string name="cancel">Cancel</string>
     <string name="deny">Permission DENIED</string>
     <string name="wrongLogin">Your Username or your Password is incorrect. Please enter again</string>
-    <string name="wrongLoginTitle">Incorrect Password</string>
+    <string name="wrongLoginTitle">Incorrect Username or Password</string>
     <string name="password">Password</string>
     <string name="google_login">Google Login</string>
     <string name="remember_me">Remember Me</string>
+    <string name="switch_language">Switch Language</string>
+    <string name="web_client_id">1097759153378-opgaggv2srm3jti1ec8h09qmmca19hv4.apps.googleusercontent.com</string>
 
 
     <string-array name="offtime">

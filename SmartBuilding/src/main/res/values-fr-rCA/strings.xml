@@ -72,6 +72,8 @@
     <string name="password">Le mot de passe</string>
     <string name="google_login">Connexion Google</string>
     <string name="remember_me">Souviens-toi de Moi</string>
+    <string name="switch_language">Changer de Langue</string>
+    <string name="web_client_id">1097759153378-opgaggv2srm3jti1ec8h09qmmca19hv4.apps.googleusercontent.com</string>
 
 
 </resources>
