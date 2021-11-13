@@ -61,7 +61,7 @@
     <string name="hallway">Hallway Lights</string>
     <string name="kitchen">Kitchen Lights</string>
 <!--    <string name="bedroom">BedRoom</string>-->
-    <string name="username">\"Username: \"</string>
+    <string name="username">\"Email: \"</string>
     <string name="pass">\" Password: \"</string>
     <string name="grant">Permission GRANTED</string>
     <string name="msg1">Permission Required!</string>

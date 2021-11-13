@@ -56,6 +56,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     static final int RC_SIGN_IN = 0;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener authListen;
+    private static final String EP = "EmailPassword";
 
     public static void setWindowFlag(Activity activity, final int bits, boolean on) {
 
@@ -128,8 +129,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
        String details = getString(R.string.username) + uname + getString(R.string.pass) + passWord;
 
        ref.setValue(details);
-
-       rememberMe();
+//       rememberMe();
 
        if (uname.isEmpty() && passWord.isEmpty()) {
            new AlertDialog.Builder(this)
@@ -169,6 +169,51 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+
+    private void createAccount(String email, String password) {
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        Log.d(EP, "createUserWithEmail:success");
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        updateUI(user);
+                    } else {
+                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                        Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                Toast.LENGTH_SHORT).show();
+                        updateUI(null);
+                    }
+                });
+    }
+
+    private void signIn(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "signInWithEmail:success");
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        updateUI(user);
+                    } else {
+                        Log.w(TAG, "signInWithEmail:failure", task.getException());
+                        Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                Toast.LENGTH_SHORT).show();
+                        updateUI(null);
+                    }
+                });
+    }
+
+    private void sendEmailVerification() {
+        final FirebaseUser user = mAuth.getCurrentUser();
+        user.sendEmailVerification()
+                .addOnCompleteListener(this, task -> {
+                    // Email sent
+                });
+    }
+
+    private void reload() { }
+
+    private void updateUI(FirebaseUser user) {
     }
 
     @Override
@@ -216,7 +261,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     @Override
     protected void onStart() {
         super.onStart();
-
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
         if (authListen != null) {
             mAuth.getInstance().signOut();
         }
