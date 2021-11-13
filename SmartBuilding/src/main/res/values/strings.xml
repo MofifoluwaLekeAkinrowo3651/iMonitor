@@ -76,6 +76,8 @@
     <string name="remember_me">Remember Me</string>
     <string name="switch_language">Switch Language</string>
     <string name="web_client_id">1097759153378-opgaggv2srm3jti1ec8h09qmmca19hv4.apps.googleusercontent.com</string>
+    <string name="review">User Review:</string>
+    <string name="submit">SUBMIT</string>
 
 
     <string-array name="offtime">
