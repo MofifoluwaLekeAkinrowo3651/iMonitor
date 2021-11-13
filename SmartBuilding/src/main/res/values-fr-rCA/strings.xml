@@ -33,7 +33,7 @@
     <string name="humid">HUMID</string>
     <string name="bedroom">Chambre</string>
     <string name="temp">Température</string>
-    <string name="set_off_time">Définir l\'heure d'arrêt</string>
+<!--    <string name="set_off_time">Definir l\'heure d'arret</string>-->
     <string name="limit_data_usage">limiter_l\'utilisation_des_données</string>
     <string name="data_mgt">Gestion de données</string>
     <string name="prefs_restricted_mode">prefs_restricted_mode</string>
@@ -51,6 +51,7 @@
     <string name="account">Compte</string>
     <string name="sync_option">option de synchronisation</string>
     <string name="help_and_support">aide et soutien</string>
+
     <string name="profile">profil</string>
     <string name="solarPanels">panneaux solaires</string>
     <string name="lockDoord">verrouiller les portes</string>
@@ -68,6 +69,11 @@
     <string name="deny">permission refusée</string>
     <string name="wrongLogin">Votre nom d\'utilisateur ou votre mot de passe est incorrect. Veuillez saisir une combinaison différente</string>
     <string name="wrongLoginTitle">nom d\'utilisateur incorrect / mot de passe</string>
-    <string name="password">Password</string>
+    <string name="password">Le mot de passe</string>
+    <string name="google_login">Connexion Google</string>
+    <string name="remember_me">Souviens-toi de Moi</string>
+    <string name="switch_language">Changer de Langue</string>
+    <string name="web_client_id">1097759153378-opgaggv2srm3jti1ec8h09qmmca19hv4.apps.googleusercontent.com</string>
+
 
 </resources>
