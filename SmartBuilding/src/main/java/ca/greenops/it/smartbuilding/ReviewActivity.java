@@ -10,23 +10,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ReviewActivity extends AppCompatActivity {
 
+    RatingBar ratingBar;
+    Button button;
+    TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
 
+        ratingBar = findViewById(R.id.ratingBar);
+        button = findViewById(R.id.submit_btn);
+        textView = findViewById(R.id.ratingView);
 
-        final RatingBar ratingbar = (RatingBar) findViewById(R.id.ratingBar);
-        Button button = (Button) findViewById(R.id.submit_btn);
-        final TextView textView = (TextView) findViewById(R.id.ratingView);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                 textView.setText(getString(R.string.yourRating) + ratingbar.getRating());
-
-            }
-        });
+        button.setOnClickListener(view -> textView.setText(getString(R.string.yourRating) + ratingBar.getRating()));
     }
 }
