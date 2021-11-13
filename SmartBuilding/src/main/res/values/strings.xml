@@ -84,6 +84,15 @@
     <string name="email">E-mail:</string>
     <string name="comments">Additional Comments:</string>
     <string name="yourRating">Your rating is: </string>
+    <string name="user">username</string>
+    <string name="greet">\"Hi \"</string>
+    <string name="failedMsg">Log out failed</string>
+    <string name="pass1">passwords</string>
+    <string name="successMsg">Sign-in Successful</string>
+    <string name="loginMsg1">Login Unsuccessful</string>
+    <string name="loginMsg">\"Login Unsuccessful. \"</string>
+    <string name="msg6">\"Success \"</string>
+    <string name="successLogin">Login successful</string>
 
 
     <string-array name="offtime">

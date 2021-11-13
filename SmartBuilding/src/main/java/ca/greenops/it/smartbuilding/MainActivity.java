@@ -84,8 +84,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         welcome = findViewById(R.id.hiuser);
 
         Intent intent = getIntent();
-        name = intent.getStringExtra("username");
-        welcome.setText("Hi " + name);
+        name = intent.getStringExtra(getString(R.string.user));
+        welcome.setText(getString(R.string.greet) + name);
 
         home_rl.setOnClickListener(v -> home_rl.setBackgroundResource(0));
 
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                                 startActivity(intent);
                             } else {
-                                Toast.makeText(getApplicationContext(), "Log out failed", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.failedMsg), Toast.LENGTH_LONG).show();
                             }
                         });
 
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         if(result.isSuccess()){
             GoogleSignInAccount account=result.getSignInAccount();
             name = account.getDisplayName();
-            welcome.setText("Hi "+ name);
+            welcome.setText(getString(R.string.greet)+ name);
         }else{
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);

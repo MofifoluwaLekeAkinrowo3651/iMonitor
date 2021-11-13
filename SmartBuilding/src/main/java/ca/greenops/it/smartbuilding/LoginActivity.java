@@ -97,8 +97,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             }
         };
 
-        String usernames = sharedPref.getString("username", "");
-        String passwords = sharedPref.getString("passwords", "");
+        String usernames = sharedPref.getString(getString(R.string.user), "");
+        String passwords = sharedPref.getString(getString(R.string.pass1), "");
 
         username.setText(usernames);
         password.setText(passwords);
@@ -187,12 +187,12 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             AuthCredential credential = GoogleAuthProvider.getCredential(idToken,null);
             firebaseAuthWithGoogle(credential);
 
-            Toast.makeText(this, "Sign-in Successful", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.successMsg), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } else {
-            Log.e(TAG, "Login Unsuccessful. "+completedTask);
-            Toast.makeText(this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();        }
+            Log.e(TAG, getString(R.string.loginMsg)+completedTask);
+            Toast.makeText(this,getString( R.string.loginMsg1), Toast.LENGTH_SHORT).show();        }
     }
 
     private void firebaseAuthWithGoogle(AuthCredential credential) {
@@ -200,10 +200,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d(TAG, "Success " + task.isSuccessful());
+                        Log.d(TAG, getString(R.string.msg6) + task.isSuccessful());
 
                         if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, getString(R.string.successLogin), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(intent);
                         }
