@@ -130,11 +130,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
        DatabaseReference ref = database.getReference();
        String uname = username.getText().toString();
        String passWord = password.getText().toString();
-       String details = getString(R.string.username) + uname + getString(R.string.pass) + passWord;
 
-       ref.setValue(details);
-
-       if (uname.isEmpty()){
+       if (uname.isEmpty() || !uname.contains("@")){
            new AlertDialog.Builder(this)
                    .setIcon(R.drawable.alert)
                    .setTitle(R.string.wrongLoginTitle)
@@ -143,7 +140,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                    .setPositiveButton(R.string.ok,null)
                    .show();
        }
-       else if (passWord.isEmpty()) {
+       else if (passWord.isEmpty() || passWord.length()<6) {
            new AlertDialog.Builder(this)
                    .setIcon(R.drawable.alert)
                    .setTitle(R.string.wrongLoginTitle)
@@ -160,11 +157,18 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
            mAuth.signInWithEmailAndPassword(uname, passWord)
            .addOnCompleteListener(task -> {
                if (task.isSuccessful()) {
-                   Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                   i.putExtra("username", uname);
-                   startActivity(i);
+                   FirebaseUser user = mAuth.getCurrentUser();
+                   updateUI(user);
+                   String details = getString(R.string.username) + uname + getString(R.string.pass) + passWord;
+                   ref.setValue(details);
                    progressDialog.dismiss();
+
+                   Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                   intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                   intent.putExtra("username", uname);
+                   startActivity(intent);
                } else {
+                   updateUI(null);
                    progressDialog.dismiss();
                    Snackbar.make(view, "Couldn't Log in. Try again later", BaseTransientBottomBar.LENGTH_LONG)
                            .show();
@@ -187,38 +191,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
-    }
-
-//    private void createAccount(String email, String password) {
-//        mAuth.createUserWithEmailAndPassword(email, password)
-//                .addOnCompleteListener(this, task -> {
-//                    if (task.isSuccessful()) {
-//                        Log.d(EP, "createUserWithEmail:success");
-//                        FirebaseUser user = mAuth.getCurrentUser();
-//                        updateUI(user);
-//                    } else {
-//                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
-//                        Toast.makeText(LoginActivity.this, "Authentication failed.",
-//                                Toast.LENGTH_SHORT).show();
-//                        updateUI(null);
-//                    }
-//                });
-//    }
-
-    private void signIn(String email, String password) {
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-                        Log.d(TAG, "signInWithEmail:success");
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        updateUI(user);
-                    } else {
-                        Log.w(TAG, "signInWithEmail:failure", task.getException());
-                        Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                Toast.LENGTH_SHORT).show();
-                        updateUI(null);
-                    }
-                });
     }
 
     private void updateUI(FirebaseUser user) {

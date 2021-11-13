@@ -23,6 +23,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.auth.api.Auth;
@@ -48,7 +49,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     private final List<Room> roomList = new ArrayList<>();
-    private RecyclerView recyclerView;
+    RecyclerView recyclerView;
     private RoomAdapter mAdapter;
     TextView welcome;
     RelativeLayout home_rl;
@@ -80,13 +81,19 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         logout = findViewById(R.id.logoutBtn);
         home_rl = findViewById(R.id.home_rl);
         ImageButton setting_rl = findViewById(R.id.setting_rl);
+
+        mAdapter = new RoomAdapter(roomList, getApplicationContext());
         recyclerView = findViewById(R.id.recycler_view);
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mAdapter);
+        prepareRoomData();
+
         welcome = findViewById(R.id.hiuser);
-
         Intent intent = getIntent();
-        name = intent.getStringExtra(getString(R.string.user));
-        welcome.setText(getString(R.string.greet) + name);
-
+        name = intent.getStringExtra("username");
+        welcome.setText(new StringBuilder().append(getString(R.string.greet)).append(" ").append(name).append("\n").toString());
         home_rl.setOnClickListener(v -> home_rl.setBackgroundResource(0));
 
         setting_rl.setOnClickListener(v -> {
@@ -103,28 +110,17 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(
-                        status -> {
-                            if (status.isSuccess()) {
-                                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                                startActivity(intent);
-                            } else {
-                                Toast.makeText(getApplicationContext(), getString(R.string.failedMsg), Toast.LENGTH_LONG).show();
-                            }
-                        });
-
-                mAdapter = new RoomAdapter(roomList, getApplicationContext());
-                RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
-                recyclerView.setLayoutManager(mLayoutManager);
-                recyclerView.setItemAnimator(new DefaultItemAnimator());
-                recyclerView.setAdapter(mAdapter);
-
-                prepareRoomData();
-            }
+        logout.setOnClickListener(view -> {
+            FirebaseAuth.getInstance().signOut();
+            Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(
+                    status -> {
+                        if (status.isSuccess()) {
+                            Intent intent1 = new Intent(MainActivity.this, LoginActivity.class);
+                            startActivity(intent1);
+                        } else {
+                            Toast.makeText(getApplicationContext(), getString(R.string.failedMsg), Toast.LENGTH_LONG).show();
+                        }
+                    });
         });
     }
 
@@ -168,12 +164,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             GoogleSignInResult result=opr.get();
             handleSignInResult(result);
         }else{
-            opr.setResultCallback(new ResultCallback<GoogleSignInResult>() {
-                @Override
-                public void onResult(@NonNull GoogleSignInResult googleSignInResult) {
-                    handleSignInResult(googleSignInResult);
-                }
-            });
+            opr.setResultCallback(this::handleSignInResult);
         }
     }
     private void handleSignInResult(GoogleSignInResult result){
@@ -182,8 +173,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             name = account.getDisplayName();
             welcome.setText(getString(R.string.greet)+ name);
         }else{
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+//            startActivity(intent);
         }
     }
 

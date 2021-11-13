@@ -85,7 +85,7 @@
     <string name="comments">Additional Comments:</string>
     <string name="yourRating">Your rating is: </string>
     <string name="user">username</string>
-    <string name="greet">\"Hi \"</string>
+    <string name="greet">Hi </string>
     <string name="failedMsg">Log out failed</string>
     <string name="pass1">passwords</string>
     <string name="successMsg">Sign-in Successful</string>
