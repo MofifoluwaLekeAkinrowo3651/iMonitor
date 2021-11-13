@@ -139,8 +139,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         mAdapter.notifyDataSetChanged();
     }
 
-
-    //Pop up Alert Dialog when back pressed
     @Override
     public void onBackPressed() {
             new AlertDialog.Builder(MainActivity.this)
