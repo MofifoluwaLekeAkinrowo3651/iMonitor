@@ -58,15 +58,26 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.item1) {
-            verify();
-        }
+        switch (item.getItemId()) {
+            case (R.id.item1):
+                verify();
 
+            case (R.id.item2):
+                userreview();
+        }
+//        if (item.getItemId() == R.id.item1) {
+//            verify();
+//        }
         return super.onOptionsItemSelected(item);
     }
 
+    private void userreview() {
+        Intent intent = new Intent(getContext(), ReviewActivity.class);
+        startActivity(intent);
+    }
+
     private void verify(){
-        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
+        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
             Toast.makeText(getContext(),"Permission Granted", Toast.LENGTH_LONG).show();
             Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
             startActivity(intent);
