@@ -22,7 +22,7 @@ public class ReviewActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
 
-        ratingBar = findViewById(R.id.ratingBar);
+        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
         button = findViewById(R.id.submit_btn);
         textView = findViewById(R.id.ratingView);
         //button.setOnClickListener(view -> textView.setText(getString(R.string.yourRating) + ratingBar.getRating()));
@@ -31,10 +31,17 @@ public class ReviewActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
-        textView.setText(getString(R.string.yourRating) + ratingBar.getRating());
+        String rating = String.valueOf(ratingBar.getRating());
+        String comment = textView.getText().toString();
+
+        textView.setText(getText(R.string.yourRating).toString() + rating);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference();
+
+        String details = getText(R.string.yourRating) + rating + getText(R.string.comments) + comment;
+        ref.setValue(details);
+
 
     }
 }
