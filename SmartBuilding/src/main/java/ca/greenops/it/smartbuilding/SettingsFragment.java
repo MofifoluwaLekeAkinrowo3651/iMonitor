@@ -61,13 +61,10 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         switch (item.getItemId()) {
             case (R.id.item1):
                 verify();
-
+            break;
             case (R.id.item2):
                 userreview();
         }
-//        if (item.getItemId() == R.id.item1) {
-//            verify();
-//        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -78,7 +75,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
     private void verify(){
         if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
-            Toast.makeText(getContext(),"Permission Granted", Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(),R.string.grant, Toast.LENGTH_LONG).show();
             Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
             startActivity(intent);
         } else {
