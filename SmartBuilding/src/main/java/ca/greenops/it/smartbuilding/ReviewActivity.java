@@ -8,7 +8,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ReviewActivity extends AppCompatActivity {
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+public class ReviewActivity extends AppCompatActivity implements View.OnClickListener{
 
     RatingBar ratingBar;
     Button button;
@@ -22,7 +25,16 @@ public class ReviewActivity extends AppCompatActivity {
         ratingBar = findViewById(R.id.ratingBar);
         button = findViewById(R.id.submit_btn);
         textView = findViewById(R.id.ratingView);
+        //button.setOnClickListener(view -> textView.setText(getString(R.string.yourRating) + ratingBar.getRating()));
+    }
 
-        button.setOnClickListener(view -> textView.setText(getString(R.string.yourRating) + ratingBar.getRating()));
+
+    @Override
+    public void onClick(View view) {
+        textView.setText(getString(R.string.yourRating) + ratingBar.getRating());
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference();
+
     }
 }

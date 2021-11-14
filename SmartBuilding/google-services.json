@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "1097759153378",
+    "firebase_url": "https://greenops-smartbuilding-default-rtdb.firebaseio.com",
+    "project_id": "greenops-smartbuilding",
+    "storage_bucket": "greenops-smartbuilding.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097759153378:android:398b81c955184228a592bb",
+        "android_client_info": {
+          "package_name": "ca.greenops.it.smartbuilding"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097759153378-5g4b4hvkt4u44pq9qcvcbvdkaapuftgh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.greenops.it.smartbuilding",
+            "certificate_hash": "1a23d6379e71adcb30d279234b3182c70e5dc8f2"
+          }
+        },
+        {
+          "client_id": "1097759153378-mkji4pkjatgfqh73truglmibmsj29k0r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.greenops.it.smartbuilding",
+            "certificate_hash": "20a624bc4b20b1bfc9fc537484c41d1af43a45d8"
+          }
+        },
+        {
+          "client_id": "1097759153378-opgaggv2srm3jti1ec8h09qmmca19hv4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf4jUiSSAVtKqj4wfnDgJr_nmvoTZmmvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097759153378-19qn36k14bbh7rdiabq7ha5gel18kk8s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
