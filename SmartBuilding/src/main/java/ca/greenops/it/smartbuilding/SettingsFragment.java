@@ -2,7 +2,6 @@ package ca.greenops.it.smartbuilding;
 
 import android.Manifest;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -20,7 +19,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceFragmentCompat;
 
-import com.google.android.material.snackbar.Snackbar;
 
 /**
  * Smart Building
@@ -31,7 +29,6 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
     private final int STORAGE_PERMISSION_CODE = 1;
-
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.preference);
@@ -112,4 +109,5 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         }
 
     }
+
 }

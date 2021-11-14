@@ -1,10 +1,12 @@
 package ca.greenops.it.smartbuilding;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,13 +22,10 @@ import androidx.fragment.app.Fragment;
 
 public class SettingsActivity extends AppCompatActivity {
 
-        Button review;
-
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_settings);
-
         }
     }
 
