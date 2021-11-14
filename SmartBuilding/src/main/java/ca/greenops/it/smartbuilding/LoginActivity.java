@@ -49,6 +49,8 @@ import com.google.firebase.database.FirebaseDatabase;
  * Created on 25-SEP-2021.
  * Created by : Team greenOps : Mofifoluwa Leke-Akinrowo (N01343651), Andrew Fraser(N01309442), Bibek Dhakal(N01419953)
  */
+
+//DESIGN PRINCIPLE INTERFACE SEGREGATION PRINCIPLE
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     EditText username, password;

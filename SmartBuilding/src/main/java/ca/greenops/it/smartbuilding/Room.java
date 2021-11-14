@@ -11,6 +11,7 @@ public class Room {
     String id;
     String name;
 
+//  DESIGN PRINCIPLE LISKOV SUBSTITUTION PRINCIPLE
     public Room(String id, String name) {
         this.id = id;
         this.name = name;

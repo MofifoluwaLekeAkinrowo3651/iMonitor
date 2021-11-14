@@ -19,6 +19,8 @@ import java.util.List;
  * Created by : Team greenOps : Mofifoluwa Leke-Akinrowo (N01343651), Andrew Fraser(N01309442), Bibek Dhakal(N01419953)
  */
 
+
+//DESIGN PATTERN STRUCTURAL PATTERN - ADAPTER
 public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.MyViewHolder> {
 
     Context context;

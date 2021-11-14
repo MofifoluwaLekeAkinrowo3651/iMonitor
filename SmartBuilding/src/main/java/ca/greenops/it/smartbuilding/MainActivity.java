@@ -53,6 +53,7 @@ import java.util.List;
  * Created by : Team greenOps : Mofifoluwa Leke-Akinrowo (N01343651), Andrew Fraser(N01309442), Bibek Dhakal(N01419953)
  */
 
+//DESIGN PRINCIPLE INTERFACE SEGREGATION PRINCIPLE
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     private final List<Room> roomList = new ArrayList<>();
     RecyclerView recyclerView;
@@ -93,7 +94,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         logout = findViewById(R.id.logoutBtn);
         home_rl = findViewById(R.id.home_rl);
         ImageButton setting_rl = findViewById(R.id.setting_rl);
-        ImageButton notification_rl = findViewById(R.id.notification);
 
         mAdapter = new RoomAdapter(roomList, getApplicationContext());
         recyclerView = findViewById(R.id.recycler_view);
@@ -113,11 +113,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             Intent i = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(i);
         });
-
-        //notification_rl.setOnClickListener(v -> {
-          //  Intent i = new Intent(MainActivity.this, Notification.class);
-         //   startActivity(i);
-       // });
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
         .requestEmail()
@@ -140,15 +135,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                         }
                     });
 
+//          DESIGN PATTERN CREATIONAL PATTERN - BUILDER
             NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, getString(R.string.builderid));
             builder.setContentTitle(getString(R.string.notiftitle));
             builder.setContentText(getString(R.string.notiftext));
             builder.setSmallIcon(R.drawable.logo);
             builder.setAutoCancel(true);
-
             NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
             managerCompat.notify(1, builder.build());
-
 
             newIntent();
             SharedPreferences preferences = getSharedPreferences(getString(R.string.prefname), MODE_PRIVATE);
