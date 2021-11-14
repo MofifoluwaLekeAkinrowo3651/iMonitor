@@ -91,6 +91,18 @@
     <string name="loginMsg">\"connexion échouée. \"</string>
     <string name="msg6">\"Succès \"</string>
     <string name="successLogin">Connexion réussie</string>
+    <string name="notiftitle">CENG322</string>
+    <string name="notiftext">greenOps SmartBuilding Notification</string>
+    <string name="channelname">Notification</string>
+    <string name="builderid">Notification</string>
+    <string name="prefname">checkbox</string>
+    <string name="usernull">onAuthStateChanged:signed_in:</string>
+    <string name="userelse">onAuthStateChanged:signed_out</string>
+    <string name="sharedprefname">checkbox</string>
+    <string name="remember">remember</string>
+    <string name="checkbox">checkbox</string>
+    <string name="dialogtitle">Login</string>
+    <string name="dialogmessage">Logging in...</string>
 
 
 </resources>

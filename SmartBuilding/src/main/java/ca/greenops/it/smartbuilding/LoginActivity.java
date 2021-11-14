@@ -61,7 +61,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     static final int RC_SIGN_IN = 0;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener authListen;
-    private static final String EP = "EmailPassword";
 
     public static void setWindowFlag(Activity activity, final int bits, boolean on) {
 
@@ -89,7 +88,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         signInButton = findViewById(R.id.GoogleSignin);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
         rememberMe = findViewById(R.id.rememberme);
-        sharedPref = getSharedPreferences("checkbox", MODE_PRIVATE);
+        sharedPref = getSharedPreferences(getString(R.string.checkbox), MODE_PRIVATE);
         String check = sharedPref.getString("remember", "");
 
         if (check.equals("true")) {
@@ -103,10 +102,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
             FirebaseUser currentUser = mAuth.getCurrentUser();
             if (currentUser != null) {
-                Log.d(TAG, "onAuthStateChanged:signed_in:" + currentUser.getUid());
+                Log.d(TAG, getString(R.string.usernull) + currentUser.getUid());
             } else {
                 // User is signed out
-                Log.d(TAG, "onAuthStateChanged:signed_out");
+                Log.d(TAG, getString(R.string.userelse));
             }
         };
 
@@ -129,14 +128,14 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         rememberMe.setOnCheckedChangeListener((compoundButton, b) -> {
             if (compoundButton.isChecked()) {
-                sharedPref = getSharedPreferences("checkbox", MODE_PRIVATE);
+                sharedPref = getSharedPreferences(getString(R.string.sharedprefname), MODE_PRIVATE);
                 edit = sharedPref.edit();
-                edit.putString("remember", "true");
+                edit.putString(getString(R.string.remember), "true");
                 edit.apply();
             } else if (!compoundButton.isChecked()) {
-                sharedPref = getSharedPreferences("checkbox", MODE_PRIVATE);
+                sharedPref = getSharedPreferences(getString(R.string.checkbox), MODE_PRIVATE);
                 edit = sharedPref.edit();
-                edit.putString("remember", "false");
+                edit.putString(getString(R.string.remember), "false");
                 edit.apply();
             }
         });
@@ -175,8 +174,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                    .setPositiveButton(R.string.ok,null)
                    .show();
        } else {
-           progressDialog.setTitle("Login");
-           progressDialog.setMessage("Logging in...");
+           progressDialog.setTitle(getString(R.string.dialogtitle));
+           progressDialog.setMessage(getString(R.string.dialogmessage));
            progressDialog.setCanceledOnTouchOutside(false);
            progressDialog.show();
 
@@ -196,7 +195,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                } else {
                    updateUI(null);
                    progressDialog.dismiss();
-                   Snackbar.make(view, "Couldn't Log in. Try again later", BaseTransientBottomBar.LENGTH_LONG)
+                   Snackbar.make(view, "Couldn't Log in. Try again later", BaseTransientBottomBar.LENGTH_SHORT)
                            .show();
                }
            });

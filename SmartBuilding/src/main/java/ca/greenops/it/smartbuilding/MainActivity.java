@@ -1,6 +1,8 @@
 package ca.greenops.it.smartbuilding;
 
 import android.app.Activity;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -23,6 +25,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -80,6 +84,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("Notification", getString(R.string.channelname), NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+
         logout = findViewById(R.id.logoutBtn);
         home_rl = findViewById(R.id.home_rl);
         ImageButton setting_rl = findViewById(R.id.setting_rl);
@@ -123,8 +133,19 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                             Toast.makeText(getApplicationContext(), getString(R.string.failedMsg), Toast.LENGTH_LONG).show();
                         }
                     });
+
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, getString(R.string.builderid));
+            builder.setContentTitle(getString(R.string.notiftitle));
+            builder.setContentText(getString(R.string.notiftext));
+            builder.setSmallIcon(R.drawable.logo);
+            builder.setAutoCancel(true);
+
+            NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
+            managerCompat.notify(1, builder.build());
+
+
             newIntent();
-            SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+            SharedPreferences preferences = getSharedPreferences(getString(R.string.prefname), MODE_PRIVATE);
             SharedPreferences.Editor editor = preferences.edit();
             editor.putString("remember", "false");
             editor.apply();
