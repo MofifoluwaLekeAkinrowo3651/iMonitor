@@ -209,7 +209,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         if(result.isSuccess()){
             GoogleSignInAccount account=result.getSignInAccount();
             name = account.getDisplayName();
-            welcome.setText(getString(R.string.greet)+ name);
+            welcome.setText(getString(R.string.greet)+" "+ name);
         }else{
 
         }
