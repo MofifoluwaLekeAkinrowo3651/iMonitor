@@ -105,6 +105,7 @@
     <string name="checkbox">checkbox</string>
     <string name="dialogtitle">Login</string>
     <string name="dialogmessage">Logging in...</string>
+    <string name="help">Help and Support</string>
 
 
     <string-array name="offtime">
