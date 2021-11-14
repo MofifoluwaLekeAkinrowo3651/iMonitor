@@ -2,6 +2,7 @@ package ca.greenops.it.smartbuilding;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.app.AlertDialog;
@@ -121,7 +123,18 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                             Toast.makeText(getApplicationContext(), getString(R.string.failedMsg), Toast.LENGTH_LONG).show();
                         }
                     });
+            newIntent();
+            SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("remember", "false");
+            editor.apply();
+            finish();
         });
+    }
+
+    private void newIntent() {
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
     }
 
     private void prepareRoomData() {
@@ -144,11 +157,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             new AlertDialog.Builder(MainActivity.this)
                     .setMessage(R.string.exit_msg1)
                     .setCancelable(false)
-                    .setPositiveButton(R.string.exit, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
+                    .setPositiveButton(R.string.exit, (dialog, id) -> {
+
+                        CheckBox checkBox = findViewById(R.id.rememberme);
+                        if (checkBox.isChecked()) {
+                            finish();
+                        } else if (!checkBox.isChecked()) {
                             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                             startActivity(intent);
                         }
+
                     })
                     .setNegativeButton(R.string.stay, null)
                     .show();
@@ -172,8 +190,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             name = account.getDisplayName();
             welcome.setText(getString(R.string.greet)+ name);
         }else{
-//            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-//            startActivity(intent);
+
         }
     }
 

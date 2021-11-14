@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -88,7 +89,13 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         signInButton = findViewById(R.id.GoogleSignin);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
         rememberMe = findViewById(R.id.rememberme);
-        sharedPref = getSharedPreferences("LoginPref", MODE_PRIVATE);
+        sharedPref = getSharedPreferences("checkbox", MODE_PRIVATE);
+        String check = sharedPref.getString("remember", "");
+
+        if (check.equals("true")) {
+            newIntent();
+        } else if (!check.equals("false")) {
+        }
 
         progressDialog = new ProgressDialog(LoginActivity.this);
         mAuth = FirebaseAuth.getInstance();
@@ -120,12 +127,31 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
+        rememberMe.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (compoundButton.isChecked()) {
+                sharedPref = getSharedPreferences("checkbox", MODE_PRIVATE);
+                edit = sharedPref.edit();
+                edit.putString("remember", "true");
+                edit.apply();
+            } else if (!compoundButton.isChecked()) {
+                sharedPref = getSharedPreferences("checkbox", MODE_PRIVATE);
+                edit = sharedPref.edit();
+                edit.putString("remember", "false");
+                edit.apply();
+            }
+        });
+
         signInButton.setOnClickListener(view -> {
             signIn();
         });
     }
 
-   public void onLoginClicked(View view) {
+    private void newIntent() {
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void onLoginClicked(View view) {
        FirebaseDatabase database = FirebaseDatabase.getInstance();
        DatabaseReference ref = database.getReference();
        String uname = username.getText().toString();
@@ -177,17 +203,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
        }
   }
 
-//    private void rememberMe() {
-//        if(rememberMe.isChecked()){
-//           edit.putString("username",username.getText().toString());
-//           edit.putString("password",password.getText().toString());
-//        }else{
-//           edit.putString("username","");
-//           edit.putString("password","");
-//        }
-//        edit.commit();
-//    }
-
     private void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -224,16 +239,13 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     private void firebaseAuthWithGoogle(AuthCredential credential) {
         mAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d(TAG, getString(R.string.msg6) + task.isSuccessful());
+                .addOnCompleteListener(this, task -> {
+                    Log.d(TAG, getString(R.string.msg6) + task.isSuccessful());
 
-                        if (task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this, getString(R.string.successLogin), Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            startActivity(intent);
-                        }
+                    if (task.isSuccessful()) {
+                        Toast.makeText(LoginActivity.this, getString(R.string.successLogin), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
                     }
                 });
     }
@@ -258,6 +270,18 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(LoginActivity.this)
+                .setMessage(R.string.exit_msg1)
+                .setCancelable(false)
+                .setPositiveButton(R.string.exit, (dialog, id) -> {
+                    this.finish();
+                })
+                .setNegativeButton(R.string.stay, null)
+                .show();
     }
 }
 

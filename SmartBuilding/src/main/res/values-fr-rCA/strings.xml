@@ -74,6 +74,23 @@
     <string name="remember_me">Souviens-toi de Moi</string>
     <string name="switch_language">Changer de Langue</string>
     <string name="web_client_id">1097759153378-opgaggv2srm3jti1ec8h09qmmca19hv4.apps.googleusercontent.com</string>
+    <string name="review">avis d\'utilisateur:</string>
+    <string name="submit">nous faire parvenir</string>
+    <string name="user_rating">votre note apparaîtra ici</string>
+    <string name="phone_num">téléphone #</string>
+    <string name="name">Nom: </string>
+    <string name="email">E-mail:</string>
+    <string name="comments">commentaires supplémentaires:</string>
+    <string name="yourRating">votre note est: </string>
+    <string name="user">Nom d\'utilisateur</string>
+    <string name="greet">salut </string>
+    <string name="failedMsg">la déconnexion a échoué</string>
+    <string name="pass1">la déconnexion a échoué</string>
+    <string name="successMsg">connexion réussie</string>
+    <string name="loginMsg1">connexion échouée</string>
+    <string name="loginMsg">\"connexion échouée. \"</string>
+    <string name="msg6">\"Succès \"</string>
+    <string name="successLogin">Connexion réussie</string>
 
 
 </resources>
