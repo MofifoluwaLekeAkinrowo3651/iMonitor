@@ -114,10 +114,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             startActivity(i);
         });
 
+        //Builder
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
         .requestEmail()
         .build();
 
+        //Builder
         googleApiClient = new GoogleApiClient.Builder(this)
                 .enableAutoManage(this, this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
