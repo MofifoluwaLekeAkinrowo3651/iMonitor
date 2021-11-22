@@ -15,6 +15,4 @@
         android:id="@+id/item4"
         android:title="@string/help"
         app:showAsAction="never" />
-
-
 </menu>

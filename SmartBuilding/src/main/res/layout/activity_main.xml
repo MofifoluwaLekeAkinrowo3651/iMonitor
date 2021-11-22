@@ -113,12 +113,11 @@
                     android:layout_height="50dp">
 
                     <ImageButton
-                        android:id="@+id/notification"
+                        android:id="@+id/review"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_centerInParent="true"
                         android:background="@drawable/bell"/>
-
                 </RelativeLayout>
             </LinearLayout>
 

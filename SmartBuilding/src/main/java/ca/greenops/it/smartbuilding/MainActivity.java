@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         logout = findViewById(R.id.logoutBtn);
         home_rl = findViewById(R.id.home_rl);
         ImageButton setting_rl = findViewById(R.id.setting_rl);
+        ImageButton review_rl = findViewById(R.id.review);
 
         mAdapter = new RoomAdapter(roomList, getApplicationContext());
         recyclerView = findViewById(R.id.recycler_view);
@@ -106,6 +107,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             Intent i = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(i);
         });
+
+        review_rl.setOnClickListener(v -> {
+            Intent i = new Intent(MainActivity.this, ReviewActivity.class);
+            startActivity(i);
+        });
+
 
         //Builder
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
