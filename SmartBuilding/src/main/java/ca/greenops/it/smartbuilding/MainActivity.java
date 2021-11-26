@@ -1,28 +1,23 @@
 package ca.greenops.it.smartbuilding;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
-import android.app.AlertDialog;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,7 +29,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
-import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,8 +48,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     TextView welcome;
     RelativeLayout home_rl;
     private GoogleApiClient googleApiClient;
-    private GoogleSignInOptions gso;
-    Button logout;
     String name;
 
     public static void setWindowFlag(Activity activity, final int bits, boolean on) {
@@ -84,7 +76,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             manager.createNotificationChannel(channel);
         }
 
-        logout = findViewById(R.id.logoutBtn);
         home_rl = findViewById(R.id.home_rl);
         ImageButton setting_rl = findViewById(R.id.setting_rl);
         ImageButton review_rl = findViewById(R.id.review);
@@ -113,51 +104,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             startActivity(i);
         });
 
-
         //Builder
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-        .requestEmail()
-        .build();
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
 
         //Builder
         googleApiClient = new GoogleApiClient.Builder(this)
                 .enableAutoManage(this, this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
-
-        logout.setOnClickListener(view -> {
-            FirebaseAuth.getInstance().signOut();
-            Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(
-                    status -> {
-                        if (status.isSuccess()) {
-                            Intent intent1 = new Intent(MainActivity.this, LoginActivity.class);
-                            startActivity(intent1);
-                        } else {
-                            Toast.makeText(getApplicationContext(), getString(R.string.failedMsg), Toast.LENGTH_LONG).show();
-                        }
-                    });
-
-//          DESIGN PATTERN CREATIONAL PATTERN - BUILDER
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, getString(R.string.builderid));
-            builder.setContentTitle(getString(R.string.notiftitle));
-            builder.setContentText(getString(R.string.notiftext));
-            builder.setSmallIcon(R.drawable.logo);
-            builder.setAutoCancel(true);
-            NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
-            managerCompat.notify(1, builder.build());
-
-            newIntent();
-            SharedPreferences preferences = getSharedPreferences(getString(R.string.prefname), MODE_PRIVATE);
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putString("remember", "false");
-            editor.apply();
-            finish();
-        });
-    }
-
-    private void newIntent() {
-        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-        startActivity(intent);
     }
 
     private void prepareRoomData() {
@@ -207,13 +163,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             opr.setResultCallback(this::handleSignInResult);
         }
     }
+
     private void handleSignInResult(GoogleSignInResult result){
         if(result.isSuccess()){
             GoogleSignInAccount account=result.getSignInAccount();
+            assert account != null;
             name = account.getDisplayName();
-            welcome.setText(getString(R.string.greet)+" "+ name);
-        }else{
-
+            welcome.setText(new StringBuilder().append(getString(R.string.greet)).append(" ").append(name).toString());
         }
     }
 
