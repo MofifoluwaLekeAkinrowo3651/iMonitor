@@ -20,6 +20,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
+            android:name="ca.greenops.it.smartbuilding.RegistrationActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
             android:name="ca.greenops.it.smartbuilding.SplashScreenActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="true">
