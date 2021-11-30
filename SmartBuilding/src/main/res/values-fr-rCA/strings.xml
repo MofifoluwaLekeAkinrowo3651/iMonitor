@@ -105,6 +105,9 @@
     <string name="dialogmessage">Se connecter..</string>
     <string name="help">Aide et soutien</string>
     <string name="support">Support</string>
+    <string name="areYouSure">aêtes-vous sûr de vouloir soumettre?</string>
+    <string name="confirmation">CONFIRMATION</string>
+    <string name="no">NON</string>
 
 
 </resources>
