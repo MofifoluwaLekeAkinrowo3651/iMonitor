@@ -1,5 +1,7 @@
 package ca.greenops.it.smartbuilding;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,8 +41,28 @@ public class ReviewActivity extends AppCompatActivity implements View.OnClickLis
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference();
 
-        String details = getText(R.string.yourRating) + rating + getText(R.string.comments) + comment;
-        ref.setValue(details);
+        new AlertDialog.Builder(this)
+                .setIcon(R.drawable.alert)
+                .setTitle(R.string.confirmation)
+                .setMessage(R.string.areYouSure)
+                .setCancelable(false)
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String details = getText(R.string.yourRating) + rating + getText(R.string.comments) + comment;
+                        ref.setValue(details);
+
+                    }
+                })
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                })
+                .show();
+
+
 
 
     }

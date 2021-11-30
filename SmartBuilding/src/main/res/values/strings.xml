@@ -107,6 +107,9 @@
     <string name="dialogmessage">Logging in...</string>
     <string name="help">Help and Support</string>
     <string name="support">Support</string>
+    <string name="areYouSure">are you sure that you want to submit?</string>
+    <string name="confirmation">CONFIRMATION</string>
+    <string name="no">NO</string>
 
 
     <string-array name="offtime">
