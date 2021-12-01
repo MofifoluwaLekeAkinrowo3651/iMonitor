@@ -107,23 +107,12 @@
     <string name="dialogmessage">Logging in...</string>
     <string name="help">Help and Support</string>
     <string name="support">Support</string>
-
-
-    <string-array name="offtime">
-        <item>1 hours</item>
-        <item>2 hours</item>
-        <item>3 hours</item>
-        <item>5 hours</item>
-        <item>10 hours</item>
-    </string-array>
-
-    <string-array name="duration">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-    </string-array>
-
+    <string name="register_logo">logo</string>
+    <string name="enter_e_mail">Enter E-mail</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="enter_full_name">Enter Full Name</string>
 
 </resources>
