@@ -13,8 +13,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -22,20 +22,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
-import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
@@ -59,6 +54,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     CheckBox rememberMe;
     SharedPreferences sharedPref;
     SharedPreferences.Editor edit;
+    Button register;
     ProgressDialog progressDialog;
     static final int RC_SIGN_IN = 0;
     private FirebaseAuth mAuth;
@@ -90,6 +86,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         signInButton = findViewById(R.id.GoogleSignin);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
         rememberMe = findViewById(R.id.rememberme);
+        register = findViewById(R.id.reg_btn);
         sharedPref = getSharedPreferences(getString(R.string.checkbox), MODE_PRIVATE);
         String check = sharedPref.getString("remember", "");
 
@@ -111,8 +108,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             }
         };
 
-        String usernames = sharedPref.getString(getString(R.string.user), "");
-        String passwords = sharedPref.getString(getString(R.string.pass1), "");
+        String usernames = sharedPref.getString(getString(R.string.user), "").trim();
+        String passwords = sharedPref.getString(getString(R.string.pass1), "").trim();
 
         username.setText(usernames);
         password.setText(passwords);
@@ -144,6 +141,11 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         signInButton.setOnClickListener(view -> {
             signIn();
+        });
+
+        register.setOnClickListener(view -> {
+            Intent reg = new Intent(LoginActivity.this, RegistrationActivity.class);
+            startActivity(reg);
         });
     }
 

@@ -173,10 +173,16 @@
             android:layout_width="136dp"
             android:layout_height="58dp"
             android:layout_gravity="center"
-            android:text="@string/google_login"
-            />
+            android:text="@string/google_login"/>
 
+        <Button
+            android:id="@+id/reg_btn"
+            android:layout_width="138dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:text="@string/register"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/gradient_bg"/>
     </LinearLayout>
-
-
 </androidx.core.widget.NestedScrollView>
