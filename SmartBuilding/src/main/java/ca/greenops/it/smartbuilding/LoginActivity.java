@@ -92,7 +92,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         if (check.equals("true")) {
             newIntent();
-        } else if (!check.equals("false")) {
         }
 
         progressDialog = new ProgressDialog(LoginActivity.this);
@@ -219,6 +218,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            assert result != null;
             handleSignInResult(result);
         }
     }
@@ -226,6 +226,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private void handleSignInResult(GoogleSignInResult completedTask) {
         if (completedTask.isSuccess()) {
             GoogleSignInAccount account = completedTask.getSignInAccount();
+            assert account != null;
             String idToken = account.getIdToken();
             String name = account.getDisplayName();
             String email = account.getEmail();
@@ -257,8 +258,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     protected void onStart() {
         super.onStart();
         if (authListen != null) {
-            mAuth.getInstance().signOut();
+            FirebaseAuth.getInstance().signOut();
         }
+        assert authListen != null;
         mAuth.addAuthStateListener(authListen);
     }
 

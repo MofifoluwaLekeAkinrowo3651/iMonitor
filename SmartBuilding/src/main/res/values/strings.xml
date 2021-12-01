@@ -112,6 +112,8 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="register">REGISTER</string>
     <string name="register_logo">register logo</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="enter_full_name">Enter Full Name</string>
 
 
     <string-array name="offtime">
