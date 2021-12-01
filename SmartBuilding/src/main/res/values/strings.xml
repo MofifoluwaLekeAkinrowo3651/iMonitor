@@ -107,6 +107,11 @@
     <string name="dialogmessage">Logging in...</string>
     <string name="help">Help and Support</string>
     <string name="support">Support</string>
+    <string name="enter_e_mail">Enter E-mail</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">REGISTER</string>
+    <string name="register_logo">register logo</string>
 
 
     <string-array name="offtime">
