@@ -113,5 +113,8 @@
     <string name="register">S\'inscrire</string>
     <string name="enter_phone_number">Entrez le numéro de téléphone</string>
     <string name="enter_full_name">Entrez le nom complet</string>
+    <string name="areYouSure">aêtes-vous sûr de vouloir soumettre?</string>
+    <string name="confirmation">CONFIRMATION</string>
+    <string name="no">NON</string>
 
 </resources>

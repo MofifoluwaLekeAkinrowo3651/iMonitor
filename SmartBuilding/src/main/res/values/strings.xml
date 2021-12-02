@@ -115,4 +115,8 @@
     <string name="enter_phone_number">Enter Phone Number</string>
     <string name="enter_full_name">Enter Full Name</string>
 
+    <string name="areYouSure">are you sure you want to submit?</string>
+    <string name="confirmation">CONFIRMATION</string>
+    <string name="no">NO</string>
+
 </resources>

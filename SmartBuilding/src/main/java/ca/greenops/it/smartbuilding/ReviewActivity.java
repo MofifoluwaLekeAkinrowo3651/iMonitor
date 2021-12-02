@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -13,11 +14,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class ReviewActivity extends AppCompatActivity implements View.OnClickListener{
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference ref = database.getReference();
+
+    String rating;
+    String comment;
+    String details;
 
     RatingBar ratingBar;
     Button button;
     TextView textView;
+    ProgressBar progressBar;
+    int counter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +45,15 @@ public class ReviewActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
-        String rating = String.valueOf(ratingBar.getRating());
-        String comment = textView.getText().toString();
+
 
         textView.setText(getText(R.string.yourRating).toString() + rating);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref = database.getReference();
+
+        rating = String.valueOf(ratingBar.getRating());
+        comment = textView.getText().toString();
+        details = getText(R.string.yourRating) + rating + getText(R.string.comments) + comment;
+
 
         new AlertDialog.Builder(this)
                 .setIcon(R.drawable.alert)
@@ -49,8 +63,8 @@ public class ReviewActivity extends AppCompatActivity implements View.OnClickLis
                 .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        String details = getText(R.string.yourRating) + rating + getText(R.string.comments) + comment;
-                        ref.setValue(details);
+
+                        prog();
 
                     }
                 })
@@ -65,5 +79,25 @@ public class ReviewActivity extends AppCompatActivity implements View.OnClickLis
 
 
 
+    }
+
+    public void prog()
+    {
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        Timer t = new Timer();
+        TimerTask tt = new TimerTask() {
+            @Override
+            public void run() {
+                ref.setValue(details);
+                counter =100;
+            progressBar.setProgress(counter);
+            if(counter != 0)
+            {
+                t.cancel();
+            }
+            }
+        };
+        t.schedule(tt,0,100);
     }
 }
