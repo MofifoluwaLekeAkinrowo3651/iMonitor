@@ -117,6 +117,8 @@
     <string name="confirmation">CONFIRMATION</string>
     <string name="no">NON</string>
     <string name="commentString">\nCommentaire de l\'utilisateur : \"</string>
+    <string name="logout">Se déconnecter</string>
+
 
 
 </resources>

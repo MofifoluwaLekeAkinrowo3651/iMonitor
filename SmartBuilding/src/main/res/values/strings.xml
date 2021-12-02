@@ -119,5 +119,6 @@
     <string name="confirmation">CONFIRMATION</string>
     <string name="no">NO</string>
     <string name="commentString">\nUser comment: </string>
+    <string name="logout">Logout</string>
 
 </resources>
