@@ -116,5 +116,7 @@
     <string name="areYouSure">aêtes-vous sûr de vouloir soumettre?</string>
     <string name="confirmation">CONFIRMATION</string>
     <string name="no">NON</string>
+    <string name="commentString">\nCommentaire de l\'utilisateur : \"</string>
+
 
 </resources>

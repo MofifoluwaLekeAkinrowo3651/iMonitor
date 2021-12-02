@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -20,11 +21,13 @@ import java.util.TimerTask;
 public class ReviewActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference ref = database.getReference();
+
     String rating, comment, details;
     RatingBar ratingBar;
     Button submit;
     TextView textView;
     ProgressBar progressBar;
+    EditText text;
     int counter = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,25 +37,21 @@ public class ReviewActivity extends AppCompatActivity {
         ratingBar = (RatingBar) findViewById(R.id.ratingBar);
         submit = findViewById(R.id.submit_btn);
         textView = findViewById(R.id.ratingView);
+        text = findViewById(R.id.comnt);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 rating = String.valueOf(ratingBar.getRating());
-              //  comment = textView.getText().toString();
-               // details = rating + comment;
+                comment = text.getText().toString();
+                details = getText(R.string.yourRating) + rating + getText(R.string.comments) + comment;
 
-                textView.setText(getString(R.string.yourRating) + rating);
-               // textView.setText(getString(R.string.yourRating) + details);
-
+                textView.setText(getString(R.string.yourRating)+ rating + getString(R.string.commentString) + comment);
                 prog();
             }
 
         });
     }
-
-
-
 
     public void prog()
     {

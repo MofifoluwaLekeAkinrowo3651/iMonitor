@@ -118,5 +118,6 @@
     <string name="areYouSure">are you sure you want to submit?</string>
     <string name="confirmation">CONFIRMATION</string>
     <string name="no">NO</string>
+    <string name="commentString">\nUser comment: </string>
 
 </resources>
