@@ -51,7 +51,7 @@
             app:layout_constraintVertical_bias="0.66" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/fullName"
             android:layout_width="135dp"
             android:layout_height="49dp"
             android:layout_alignParentStart="true"
@@ -73,7 +73,7 @@
             app:layout_constraintVertical_bias="0.196" />
 
         <EditText
-            android:id="@+id/editTextPhone"
+            android:id="@+id/phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -96,7 +96,7 @@
             app:layout_constraintVertical_bias="0.29" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
