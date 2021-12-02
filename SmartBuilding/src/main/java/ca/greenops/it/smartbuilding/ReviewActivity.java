@@ -17,69 +17,42 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class ReviewActivity extends AppCompatActivity implements View.OnClickListener{
+public class ReviewActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference ref = database.getReference();
-
-    String rating;
-    String comment;
-    String details;
-
+    String rating, comment, details;
     RatingBar ratingBar;
-    Button button;
+    Button submit;
     TextView textView;
     ProgressBar progressBar;
     int counter = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
 
         ratingBar = (RatingBar) findViewById(R.id.ratingBar);
-        button = findViewById(R.id.submit_btn);
+        submit = findViewById(R.id.submit_btn);
         textView = findViewById(R.id.ratingView);
-        //button.setOnClickListener(view -> textView.setText(getString(R.string.yourRating) + ratingBar.getRating()));
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rating = String.valueOf(ratingBar.getRating());
+              //  comment = textView.getText().toString();
+               // details = rating + comment;
+
+                textView.setText(getString(R.string.yourRating) + rating);
+               // textView.setText(getString(R.string.yourRating) + details);
+
+                prog();
+            }
+
+        });
     }
 
 
-    @Override
-    public void onClick(View view) {
 
-
-        textView.setText(getText(R.string.yourRating).toString() + rating);
-
-
-        rating = String.valueOf(ratingBar.getRating());
-        comment = textView.getText().toString();
-        details = getText(R.string.yourRating) + rating + getText(R.string.comments) + comment;
-
-
-        new AlertDialog.Builder(this)
-                .setIcon(R.drawable.alert)
-                .setTitle(R.string.confirmation)
-                .setMessage(R.string.areYouSure)
-                .setCancelable(false)
-                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                        prog();
-
-                    }
-                })
-                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                })
-                .show();
-
-
-
-
-    }
 
     public void prog()
     {
