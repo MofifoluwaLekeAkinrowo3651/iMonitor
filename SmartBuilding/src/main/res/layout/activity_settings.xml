@@ -31,7 +31,7 @@ tools:context="ca.greenops.it.smartbuilding.SettingsActivity">
         app:fabSize="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_plus" />
+        app:srcCompat="@drawable/ic_mail_" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/settingsfrag"
