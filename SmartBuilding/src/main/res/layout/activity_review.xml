@@ -17,7 +17,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        app:layout_constraintVertical_bias="0.733" />
+        app:layout_constraintVertical_bias="0.916" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -37,10 +37,10 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="461dp"
-            android:layout_marginEnd="33dp"
-            android:layout_marginBottom="27dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="318dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="170dp"
             android:numStars="5"
             android:stepSize=".5"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -51,17 +51,17 @@
             app:layout_constraintVertical_bias="0.66" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/fullName"
             android:layout_width="135dp"
             android:layout_height="49dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="53dp"
-            android:layout_marginTop="56dp"
-            android:layout_marginEnd="125dp"
-            android:layout_marginBottom="440dp"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginEnd="131dp"
+            android:layout_marginBottom="475dp"
             android:ems="10"
             android:hint="@string/name"
             android:inputType="textPersonName"
@@ -73,17 +73,17 @@
             app:layout_constraintVertical_bias="0.196" />
 
         <EditText
-            android:id="@+id/editTextPhone"
+            android:id="@+id/phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="43dp"
-            android:layout_marginTop="137dp"
-            android:layout_marginEnd="61dp"
-            android:layout_marginBottom="360dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="83dp"
+            android:layout_marginEnd="54dp"
+            android:layout_marginBottom="414dp"
             android:ems="10"
             android:hint="@string/phone_num"
             android:inputType="phone"
@@ -96,17 +96,17 @@
             app:layout_constraintVertical_bias="0.29" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="212dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginBottom="285dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="153dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginBottom="344dp"
             android:ems="10"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
@@ -119,17 +119,17 @@
             app:layout_constraintVertical_bias="0.379" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/comnt"
             android:layout_width="196dp"
             android:layout_height="70dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="288dp"
-            android:layout_marginEnd="62dp"
-            android:layout_marginBottom="187dp"
+            android:layout_marginStart="58dp"
+            android:layout_marginTop="231dp"
+            android:layout_marginEnd="59dp"
+            android:layout_marginBottom="244dp"
             android:background="@color/white"
             android:ems="10"
             android:gravity="start|top"
@@ -144,18 +144,31 @@
 
         <TextView
             android:id="@+id/ratingView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="236dp"
+            android:layout_height="86dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="400dp"
-            android:layout_marginEnd="74dp"
-            android:layout_marginBottom="125dp"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="396dp"
+            android:layout_marginEnd="23dp"
+            android:layout_marginBottom="63dp"
+            android:textSize="10pt"
             android:text="@string/user_rating" />
 
     </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/submit_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintVertical_bias="0.127" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
