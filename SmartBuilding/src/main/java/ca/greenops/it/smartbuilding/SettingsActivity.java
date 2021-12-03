@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,6 +32,7 @@ public class SettingsActivity extends AppCompatActivity implements GoogleApiClie
 
     private GoogleApiClient googleApiClient;
     FloatingActionButton fab;
+    Switch pSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,11 @@ public class SettingsActivity extends AppCompatActivity implements GoogleApiClie
 
         Button logout = findViewById(R.id.logoutBtn);
         fab = findViewById(R.id.fab);
+        pSwitch = findViewById(R.id.switch1);
 
+        pSwitch.setOnClickListener(view -> {
+
+        });
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
