@@ -56,16 +56,13 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         switch (item.getItemId()) {
             case (R.id.item1):
                 verify();
-            break;
+                break;
             case (R.id.item2):
-                userreview();
+                Intent intent = new Intent(getContext(), ReviewActivity.class);
+                startActivity(intent);
+                break;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private void userreview() {
-        Intent intent = new Intent(getContext(), ReviewActivity.class);
-        startActivity(intent);
     }
 
     private void verify(){
@@ -99,7 +96,6 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
         if (requestCode == STORAGE_PERMISSION_CODE)  {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(getActivity(), R.string.grant, Toast.LENGTH_SHORT).show();

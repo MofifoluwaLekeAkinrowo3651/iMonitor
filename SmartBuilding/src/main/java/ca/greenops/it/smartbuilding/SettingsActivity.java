@@ -44,8 +44,8 @@ public class SettingsActivity extends AppCompatActivity implements GoogleApiClie
         Button logout = findViewById(R.id.logoutBtn);
         fab = findViewById(R.id.fab);
         pSwitch = findViewById(R.id.switch1);
-        Toast toast= Toast.makeText(this, R.string.potrait, Toast.LENGTH_LONG);
 
+        Toast toast= Toast.makeText(this, R.string.potrait, Toast.LENGTH_LONG);
         pSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
