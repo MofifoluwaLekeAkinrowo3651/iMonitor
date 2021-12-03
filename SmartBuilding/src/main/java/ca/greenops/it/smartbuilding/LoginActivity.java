@@ -36,15 +36,12 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-
 /**
  * Smart Building
  * https://github.com/MofifoluwaLekeAkinrowo3651/SmartBuilding
  * Created on 25-SEP-2021.
  * Created by : Team greenOps : Mofifoluwa Leke-Akinrowo (N01343651), Andrew Fraser(N01309442), Bibek Dhakal(N01419953)
  */
-
 //DESIGN PRINCIPLE INTERFACE SEGREGATION PRINCIPLE
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
@@ -84,7 +81,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         signInButton = findViewById(R.id.GoogleSignin);
-        signInButton.setSize(SignInButton.SIZE_STANDARD);
+        signInButton.setSize(SignInButton.SIZE_ICON_ONLY);
         rememberMe = findViewById(R.id.rememberme);
         register = findViewById(R.id.reg_btn);
         sharedPref = getSharedPreferences(getString(R.string.checkbox), MODE_PRIVATE);
