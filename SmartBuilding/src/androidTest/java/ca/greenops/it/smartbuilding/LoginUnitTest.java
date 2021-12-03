@@ -1,10 +1,19 @@
 package ca.greenops.it.smartbuilding;
 
 import static org.junit.Assert.assertEquals;
+
+import android.app.Instrumentation;
+import android.content.Context;
+import android.content.Intent;
+
+import androidx.test.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -13,6 +22,11 @@ public class LoginUnitTest {
 
     FirebaseAuth mAuth;
 
+    @Before
+    public void onStart() {
+        new LoginActivity();
+    }
+
     @Test
     public void bademail_goodpass () {
         String uname = "bademail";
@@ -20,7 +34,8 @@ public class LoginUnitTest {
 
         Task<AuthResult> task = mAuth.signInWithEmailAndPassword(uname, passWord);
         String result = task.getResult().toString().trim();
-        assertEquals(result, "Successful");
+        Assert.assertEquals(result, "Successful");
+        Assert.assertEquals(result, "Successful");
     }
 
     @Test
@@ -30,7 +45,7 @@ public class LoginUnitTest {
 
         Task<AuthResult> task = mAuth.signInWithEmailAndPassword(uname, passWord);
         String result = task.getResult().toString().trim();
-        assertEquals(result, "Successful");
+        Assert.assertEquals(result, "Successful");
     }
 
     @Test
@@ -40,7 +55,7 @@ public class LoginUnitTest {
 
         Task<AuthResult> task = mAuth.signInWithEmailAndPassword(uname, passWord);
         String result = task.getResult().toString().trim();
-        assertEquals(result, "Successful");
+        Assert.assertEquals(result, "Successful");
     }
 
     @Test
@@ -50,6 +65,6 @@ public class LoginUnitTest {
 
         Task<AuthResult> task = mAuth.signInWithEmailAndPassword(uname, passWord);
         String result = task.getResult().toString().trim();
-        assertEquals(result, "Successful");
+        Assert.assertEquals(result, "Successful");
     }
 }

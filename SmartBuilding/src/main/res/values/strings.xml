@@ -1,11 +1,11 @@
 <resources>
 
-<!--    /**-->
-<!--    * Smart Building-->
-<!--    * https://github.com/MofifoluwaLekeAkinrowo3651/SmartBuilding-->
-<!--    * Created on 25-SEP-2021.-->
-<!--    * Created by : Team greenOps : Mofifoluwa Leke-Akinrowo (N01343651), Andrew Fraser(N01309442), Bibek Dhakal(N01419953)-->
-<!--    */-->
+    <!--    /**-->
+    <!--    * Smart Building-->
+    <!--    * https://github.com/MofifoluwaLekeAkinrowo3651/SmartBuilding-->
+    <!--    * Created on 25-SEP-2021.-->
+    <!--    * Created by : Team greenOps : Mofifoluwa Leke-Akinrowo (N01343651), Andrew Fraser(N01309442), Bibek Dhakal(N01419953)-->
+    <!--    */-->
 
     <string name="app_name">Smart Building</string>
     <string name="action_settings">Settings</string>
@@ -60,7 +60,7 @@
     <string name="lockDoord">Security Locks</string>
     <string name="hallway">Hallway Lights</string>
     <string name="kitchen">Kitchen Lights</string>
-<!--    <string name="bedroom">BedRoom</string>-->
+    <!--    <string name="bedroom">BedRoom</string>-->
     <string name="username">\"Email: \"</string>
     <string name="pass">\" Password: \"</string>
     <string name="grant">Permission GRANTED</string>
@@ -114,6 +114,15 @@
     <string name="register">Register</string>
     <string name="enter_phone_number">Enter Phone Number</string>
     <string name="enter_full_name">Enter Full Name</string>
+    <string name="title_activity_login2">LoginActivity2</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 
     <string name="areYouSure">are you sure you want to submit?</string>
     <string name="confirmation">CONFIRMATION</string>
