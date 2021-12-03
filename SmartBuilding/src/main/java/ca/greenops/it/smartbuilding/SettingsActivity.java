@@ -2,9 +2,11 @@ package ca.greenops.it.smartbuilding;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -42,9 +44,18 @@ public class SettingsActivity extends AppCompatActivity implements GoogleApiClie
         Button logout = findViewById(R.id.logoutBtn);
         fab = findViewById(R.id.fab);
         pSwitch = findViewById(R.id.switch1);
+        Toast toast= Toast.makeText(this, R.string.potrait, Toast.LENGTH_LONG);
 
-        pSwitch.setOnClickListener(view -> {
-
+        pSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                    toast.show();
+                } else {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+                }
+            }
         });
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()

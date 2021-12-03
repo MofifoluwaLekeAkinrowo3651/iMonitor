@@ -130,5 +130,6 @@
     <string name="commentString">\nUser comment: </string>
     <string name="logout">Logout</string>
     <string name="floating_action_button">Floating Action Button</string>
+    <string name="potrait">Potrait Locked</string>
 
 </resources>

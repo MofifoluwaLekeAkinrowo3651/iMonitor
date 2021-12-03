@@ -119,6 +119,8 @@
     <string name="commentString">\nCommentaire de l\'utilisateur : \"</string>
     <string name="logout">Se déconnecter</string>
     <string name="floating_action_button">Floating Action Button</string>
+    <string name="potrait">Portrait verrouillé</string>
+
 
 
 </resources>
