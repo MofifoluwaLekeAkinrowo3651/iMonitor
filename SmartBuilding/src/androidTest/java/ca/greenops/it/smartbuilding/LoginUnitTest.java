@@ -1,34 +1,29 @@
 package ca.greenops.it.smartbuilding;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
-import com.google.android.gms.common.internal.IAccountAccessor;
-
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(AndroidJUnit4.class)
 public class LoginUnitTest {
 
     @Test
     public void bademail_goodpass () {
-
+        LoginActivity loginActivity = new LoginActivity();
     }
 
     @Test
     public void goodemail_badpass () {
-
+        LoginActivity loginActivity = new LoginActivity();
     }
 
     @Test
     public void bademail_badpass () {
-
+        LoginActivity loginActivity = new LoginActivity();
     }
 
     @Test
     public void goodemail_goodpass () {
-
+        LoginActivity loginActivity = new LoginActivity();
     }
 }
