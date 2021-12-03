@@ -3,6 +3,7 @@ package ca.greenops.it.smartbuilding;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -15,6 +16,8 @@ import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 
 /**
@@ -27,6 +30,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SettingsActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     private GoogleApiClient googleApiClient;
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +38,20 @@ public class SettingsActivity extends AppCompatActivity implements GoogleApiClie
         setContentView(R.layout.activity_settings);
 
         Button logout = findViewById(R.id.logoutBtn);
+        fab = findViewById(R.id.fab);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
 
+        fab.setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("plain/text");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "smartbuilding@greenops.com" });
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Customer Support:Device#A0o16C9IeX");
+            intent.putExtra(Intent.EXTRA_TEXT, "");
+            startActivity(Intent.createChooser(intent, ""));
+        });
 
         googleApiClient = new GoogleApiClient.Builder(this)
                 .enableAutoManage(this, (GoogleApiClient.OnConnectionFailedListener) this)
