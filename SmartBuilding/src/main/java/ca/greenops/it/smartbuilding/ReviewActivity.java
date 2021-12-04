@@ -50,7 +50,11 @@ public class ReviewActivity extends AppCompatActivity {
 
                 textView.setText(getString(R.string.yourRating)+ rating + getString(R.string.commentString) + comment);
 
-
+                name.getText().clear();
+                phoneNum.getText().clear();
+                email.getText().clear();
+                cmnt.getText().clear();
+                ratingBar.setRating(0);
 
                 prog();
             }
