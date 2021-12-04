@@ -1,7 +1,5 @@
 package ca.greenops.it.smartbuilding;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,7 +25,7 @@ public class ReviewActivity extends AppCompatActivity {
     Button submit;
     TextView textView;
     ProgressBar progressBar;
-    EditText text1,text2,text3,text4;
+    EditText name,phoneNum,email,cmnt;
     int counter = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,25 +35,23 @@ public class ReviewActivity extends AppCompatActivity {
         ratingBar = (RatingBar) findViewById(R.id.ratingBar);
         submit = findViewById(R.id.submit_btn);
         textView = findViewById(R.id.ratingView);
-        text1 = findViewById(R.id.fullName);
-        text2 = findViewById(R.id.phone);
-        text3 = findViewById(R.id.email);
-        text4 = findViewById(R.id.comnt);
+        name = findViewById(R.id.fullName);
+        phoneNum = findViewById(R.id.phone);
+        email = findViewById(R.id.email);
+        cmnt = findViewById(R.id.comment);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 rating = String.valueOf(ratingBar.getRating());
-                comment = text4.getText().toString();
+                comment = cmnt.getText().toString();
                 details = getText(R.string.yourRating) + rating + getText(R.string.comments) + comment;
 
                 textView.setText(getString(R.string.yourRating)+ rating + getString(R.string.commentString) + comment);
 
-                text1.getText().clear();
-                text2.getText().clear();
-                text3.getText().clear();
-                text4.getText().clear();
-                ratingBar.setRating(0);
+
+
                 prog();
             }
 
