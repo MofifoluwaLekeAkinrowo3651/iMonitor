@@ -27,6 +27,13 @@ public class ReviewActivityTest{
     {
         ReviewActivity activity = Robolectric.setupActivity(ReviewActivity.class);
     }
+    @Test
+    public void testButtonClick() throws Exception {
+        Button view = (Button) activity.findViewById(R.id.submit_btn);
+        assertNotNull(view);
+        view.performClick();
+        assertThat(true, equalTo(ReviewActivity.btnPressed));
+    }
 
 
     @Test

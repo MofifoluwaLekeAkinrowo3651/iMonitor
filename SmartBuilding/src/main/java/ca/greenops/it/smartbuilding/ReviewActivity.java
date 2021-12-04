@@ -23,6 +23,7 @@ public class ReviewActivity extends AppCompatActivity {
     DatabaseReference ref = database.getReference();
 
     String rating, comment, details;
+    static boolean btnPressed = false;
     RatingBar ratingBar;
     Button submit;
     TextView textView;
@@ -45,7 +46,7 @@ public class ReviewActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                btnPressed = true;
                 rating = String.valueOf(ratingBar.getRating());
                 comment = cmnt.getText().toString();
                 details = getText(R.string.yourRating) + rating + getText(R.string.comments) + comment;
