@@ -27,7 +27,7 @@ public class ReviewActivity extends AppCompatActivity {
     Button submit;
     TextView textView;
     ProgressBar progressBar;
-    EditText name,phoneNum,email,cmnt;
+    static EditText name,phoneNum,email,cmnt;
     int counter = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,13 +52,13 @@ public class ReviewActivity extends AppCompatActivity {
 
                 textView.setText(getString(R.string.yourRating)+ rating + getString(R.string.commentString) + comment);
 
+                prog();
+
                 name.getText().clear();
                 phoneNum.getText().clear();
                 email.getText().clear();
                 cmnt.getText().clear();
                 ratingBar.setRating(0);
-
-                prog();
             }
 
         });
