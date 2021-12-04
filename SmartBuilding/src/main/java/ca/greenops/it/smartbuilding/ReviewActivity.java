@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.junit.runner.RunWith;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
