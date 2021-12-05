@@ -43,31 +43,27 @@ public class ReviewActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         cmnt = findViewById(R.id.comment);
 
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                btnPressed = true;
-                rating = String.valueOf(ratingBar.getRating());
-                comment = cmnt.getText().toString();
-                details = getText(R.string.yourRating) + rating + getText(R.string.comments) + comment;
+        submit.setOnClickListener(view -> {
+            btnPressed = true;
+            rating = String.valueOf(ratingBar.getRating());
+            comment = cmnt.getText().toString();
+            details = getText(R.string.yourRating) + rating + getText(R.string.comments) + comment;
 
-                textView.setText(getString(R.string.yourRating)+ rating + getString(R.string.commentString) + comment);
+            textView.setText(getString(R.string.yourRating)+ rating + getString(R.string.commentString) + comment);
 
-                prog();
+            prog();
 
-                name.getText().clear();
-                phoneNum.getText().clear();
-                email.getText().clear();
-                cmnt.getText().clear();
-                ratingBar.setRating(0);
-            }
-
+            name.getText().clear();
+            phoneNum.getText().clear();
+            email.getText().clear();
+            cmnt.getText().clear();
+            ratingBar.setRating(0);
         });
     }
 
     public void prog()
     {
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.progressBar);
 
         Timer t = new Timer();
         TimerTask tt = new TimerTask() {
