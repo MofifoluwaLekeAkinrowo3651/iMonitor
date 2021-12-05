@@ -40,8 +40,8 @@
 
     <TextView
         android:id="@+id/profilePhone"
-        android:layout_width="401dp"
-        android:layout_height="88dp"
+        android:layout_width="400dp"
+        android:layout_height="106dp"
         android:layout_marginLeft="2pt"
         android:background="@color/lime"
         android:textColor="@color/blue"
