@@ -35,6 +35,7 @@ public class SettingsActivity extends AppCompatActivity implements GoogleApiClie
     private GoogleApiClient googleApiClient;
     FloatingActionButton fab;
     Switch pSwitch;
+    Button profileBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,8 @@ public class SettingsActivity extends AppCompatActivity implements GoogleApiClie
         Button logout = findViewById(R.id.logoutBtn);
         fab = findViewById(R.id.fab);
         pSwitch = findViewById(R.id.switch1);
+        profileBtn = findViewById(R.id.profile);
+
 
         Toast toast= Toast.makeText(this, R.string.potrait, Toast.LENGTH_LONG);
         pSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -57,6 +60,14 @@ public class SettingsActivity extends AppCompatActivity implements GoogleApiClie
                 }
             }
         });
+
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
