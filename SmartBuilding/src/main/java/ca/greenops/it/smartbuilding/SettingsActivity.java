@@ -64,7 +64,8 @@ public class SettingsActivity extends AppCompatActivity implements GoogleApiClie
         profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                    Intent intent = new Intent(SettingsActivity.this,ProfileActivity.class);
+                    startActivity(intent);
             }
         });
 
