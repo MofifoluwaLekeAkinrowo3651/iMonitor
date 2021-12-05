@@ -22,10 +22,10 @@ public class ProfileActivity extends AppCompatActivity {
 
         name=MainActivity.getActivityInstance().getData();
         textView1.setText(new StringBuilder().append(getString(R.string.user1)).append(name));
-        textView2.setText(R.string.email1);
+
+        email=LoginActivity.getActivityInstance2().getEmail();
+        textView2.setText(new StringBuilder().append(getString(R.string.email1)).append(email));
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

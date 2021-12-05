@@ -44,7 +44,8 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 //DESIGN PRINCIPLE INTERFACE SEGREGATION PRINCIPLE
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
-
+    static LoginActivity INSTANCE2;
+    String email;
     EditText username, password;
     SignInButton signInButton;
     GoogleApiClient googleApiClient;
@@ -52,6 +53,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     SharedPreferences sharedPref;
     SharedPreferences.Editor edit;
     Button register;
+    String usernames;
     ProgressDialog progressDialog;
     static final int RC_SIGN_IN = 0;
     private FirebaseAuth mAuth;
@@ -75,6 +77,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false);
         getWindow().setStatusBarColor(Color.TRANSPARENT);
+        INSTANCE2=this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -104,7 +107,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             }
         };
 
-        String usernames = sharedPref.getString(getString(R.string.user), "").trim();
+        usernames = sharedPref.getString(getString(R.string.user), "").trim();
         String passwords = sharedPref.getString(getString(R.string.pass1), "").trim();
 
         username.setText(usernames);
@@ -143,6 +146,19 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             Intent reg = new Intent(LoginActivity.this, RegistrationActivity.class);
             startActivity(reg);
         });
+    }
+
+
+
+    public static LoginActivity getActivityInstance2()
+    {
+        return INSTANCE2;
+    }
+
+    public String getEmail()
+    {
+        email = username.getText().toString();
+        return this.email;
     }
 
     private void newIntent() {
