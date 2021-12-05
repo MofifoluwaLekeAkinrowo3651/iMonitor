@@ -121,6 +121,15 @@
     <string name="floating_action_button">Floating Action Button</string>
     <string name="potrait">Portrait verrouillé</string>
     <string name="url">https://www.iotacommunications.com/blog/smart-building/</string>
+    <string name="title_activity_login2">LoginActivity2</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">le mot de passe</string>
+    <string name="action_sign_in">Connexion ou Inscription</string>
+    <string name="action_sign_in_short">S\'identifier</string>
+    <string name="welcome">"Bienvenue !"</string>
+    <string name="invalid_username">Pas un nom d\'utilisateur valide</string>
+    <string name="invalid_password">Le mot de passe doit contenir plus de 5 caractères</string>
+    <string name="login_failed">"Échec de la connexion"</string>
 
 
 </resources>
