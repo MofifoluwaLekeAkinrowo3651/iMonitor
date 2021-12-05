@@ -44,7 +44,6 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 //DESIGN PRINCIPLE INTERFACE SEGREGATION PRINCIPLE
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
-
     EditText username, password;
     SignInButton signInButton;
     GoogleApiClient googleApiClient;
@@ -52,6 +51,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     SharedPreferences sharedPref;
     SharedPreferences.Editor edit;
     Button register;
+    String usernames;
     ProgressDialog progressDialog;
     static final int RC_SIGN_IN = 0;
     private FirebaseAuth mAuth;
@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             }
         };
 
-        String usernames = sharedPref.getString(getString(R.string.user), "").trim();
+        usernames = sharedPref.getString(getString(R.string.user), "").trim();
         String passwords = sharedPref.getString(getString(R.string.pass1), "").trim();
 
         username.setText(usernames);

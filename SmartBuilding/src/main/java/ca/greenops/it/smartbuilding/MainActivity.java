@@ -137,15 +137,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 .setMessage(R.string.exit_msg1)
                 .setCancelable(false)
                 .setPositiveButton(R.string.exit, (dialog, id) -> {
-
-                    CheckBox checkBox = findViewById(R.id.rememberme);
-                    if (checkBox.isChecked()) {
-                        finish();
-                    } else if (!checkBox.isChecked()) {
-                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                        startActivity(intent);
-                    }
-
+                        this.finish();
                 })
                 .setNegativeButton(R.string.stay, null)
                 .show();

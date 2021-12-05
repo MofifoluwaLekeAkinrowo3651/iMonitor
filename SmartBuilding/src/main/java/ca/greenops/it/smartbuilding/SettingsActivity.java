@@ -2,9 +2,12 @@ package ca.greenops.it.smartbuilding;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,6 +34,8 @@ public class SettingsActivity extends AppCompatActivity implements GoogleApiClie
 
     private GoogleApiClient googleApiClient;
     FloatingActionButton fab;
+    Switch pSwitch;
+    Button profileBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,30 @@ public class SettingsActivity extends AppCompatActivity implements GoogleApiClie
 
         Button logout = findViewById(R.id.logoutBtn);
         fab = findViewById(R.id.fab);
+        pSwitch = findViewById(R.id.switch1);
+        profileBtn = findViewById(R.id.profile);
+
+
+        Toast toast= Toast.makeText(this, R.string.potrait, Toast.LENGTH_LONG);
+        pSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                    toast.show();
+                } else {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+                }
+            }
+        });
+
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    Intent intent = new Intent(SettingsActivity.this,ProfileActivity.class);
+                    startActivity(intent);
+            }
+        });
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()

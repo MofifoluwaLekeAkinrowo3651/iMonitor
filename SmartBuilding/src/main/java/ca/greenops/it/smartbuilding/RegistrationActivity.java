@@ -36,37 +36,37 @@ public class RegistrationActivity extends AppCompatActivity {
             String password = pword.getText().toString().trim();
 
             if (email_2.isEmpty()) {
-                email.setError("Email is empty");
+                email.setError(getString(R.string.EmptyEmail));
                 email.requestFocus();
                 return;
             }
             if (!Patterns.EMAIL_ADDRESS.matcher(email_2).matches()) {
-                email.setError("Enter the valid email");
+                email.setError(getString(R.string.InvalidEmail));
                 email.requestFocus();
                 return;
             }
             if (!pattern.matcher(password).matches()) {
-                pword.setError("Enter the valid password");
+                pword.setError(getString(R.string.InvalidPass));
                 pword.requestFocus();
                 return;
             }
             if (password.isEmpty()) {
-                pword.setError("Password is empty");
+                pword.setError(getString(R.string.EmptyPass));
                 pword.requestFocus();
                 return;
             }
             if (password.length() < 8) {
-                pword.setError("Length should be at least 8 characters");
+                pword.setError(getString(R.string.PassLength));
                 pword.requestFocus();
                 return;
             }
 
             mAuth.createUserWithEmailAndPassword(email_2, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    Toast.makeText(RegistrationActivity.this, "You are successfully Registered", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegistrationActivity.this, getString(R.string.RegistrattionSuccess), Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
                 } else {
-                    Toast.makeText(RegistrationActivity.this, "You are not Registered! Try again", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegistrationActivity.this, getString(R.string.NoRegistration), Toast.LENGTH_SHORT).show();
                 }
             });
         });

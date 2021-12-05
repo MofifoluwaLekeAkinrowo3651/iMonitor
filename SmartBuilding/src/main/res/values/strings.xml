@@ -103,7 +103,7 @@
     <string name="dialogtitle">Login</string>
     <string name="dialogmessage">Logging in...</string>
     <string name="help">Help and Support</string>
-    <string name="support">Support</string>
+    <string name="support">Help_Support</string>
     <string name="register_logo">logo</string>
     <string name="enter_e_mail">Enter E-mail</string>
     <string name="enter_password">Enter Password</string>
@@ -121,11 +121,27 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
-    <string name="areYouSure">are you sure you want to submit?</string>
+    <string name="areYouSure">Are you sure you want to submit?</string>
     <string name="confirmation">CONFIRMATION</string>
     <string name="no">NO</string>
     <string name="commentString">\nUser comment: </string>
     <string name="logout">Logout</string>
     <string name="floating_action_button">Floating Action Button</string>
+    <string name="potrait">Portrait Locked</string>
+    <string name="url">https://www.iotacommunications.com/blog/smart-building/</string>
+    <string name="user1">User: </string>
+    <string name="email1">E-mail: </string>
+    <string name="phone1" translatable="false">Phone:</string>
+    <string name="NoRegistration">You are not Registered! Try again</string>
+    <string name="RegistrattionSuccess">You are successfully Registered</string>
+    <string name="EmptyEmail">Email is empty</string>
+    <string name="InvalidEmail">Enter the valid email</string>
+    <string name="InvalidPass">Enter the valid password</string>
+    <string name="EmptyPass">Password is empty</string>
+    <string name="PassLength">Length should be at least 8 characters</string>
+    <string name="un">User Name: </string>
+    <string name="Email" translatable="false">Email: </string>
+    <string name="Phone">Phone: </string>
+    <string name="UID" translatable="false">User ID: </string>
 
 </resources>

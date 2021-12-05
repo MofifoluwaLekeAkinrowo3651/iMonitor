@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -53,19 +54,20 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent;
         switch (item.getItemId()) {
             case (R.id.item1):
                 verify();
-            break;
+                break;
             case (R.id.item2):
-                userreview();
+                Intent intent1 = new Intent(getContext(), ReviewActivity.class);
+                startActivity(intent1);
+                break;
+            case(R.id.item3):
+                Intent intent2 = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url)));
+                startActivity(intent2);
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private void userreview() {
-        Intent intent = new Intent(getContext(), ReviewActivity.class);
-        startActivity(intent);
     }
 
     private void verify(){
@@ -99,7 +101,6 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
         if (requestCode == STORAGE_PERMISSION_CODE)  {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(getActivity(), R.string.grant, Toast.LENGTH_SHORT).show();

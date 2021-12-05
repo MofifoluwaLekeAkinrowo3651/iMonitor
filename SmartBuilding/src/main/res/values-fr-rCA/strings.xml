@@ -119,6 +119,28 @@
     <string name="commentString">\nCommentaire de l\'utilisateur : \"</string>
     <string name="logout">Se déconnecter</string>
     <string name="floating_action_button">Floating Action Button</string>
+    <string name="potrait">Portrait verrouillé</string>
+    <string name="url">https://www.iotacommunications.com/blog/smart-building/</string>
+    <string name="title_activity_login2">LoginActivity2</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">le mot de passe</string>
+    <string name="action_sign_in">Connexion ou Inscription</string>
+    <string name="action_sign_in_short">S\'identifier</string>
+    <string name="welcome">"Bienvenue !"</string>
+    <string name="invalid_username">Pas un nom d\'utilisateur valide</string>
+    <string name="invalid_password">Le mot de passe doit contenir plus de 5 caractères</string>
+    <string name="login_failed">"Échec de la connexion"</string>
+    <string name="user1">User: </string>
+    <string name="email1">E-mail: </string>
+    <string name="NoRegistration">You are not Registered! Try again</string>
+    <string name="RegistrattionSuccess">You are successfully Registered</string>
+    <string name="EmptyEmail">Email is empty</string>
+    <string name="InvalidEmail">Enter the valid email</string>
+    <string name="InvalidPass">Enter the valid password</string>
+    <string name="EmptyPass">Password is empty</string>
+    <string name="PassLength">Length should be at least 8 characters</string>
+    <string name="un">\"User Name: \"</string>
+    <string name="Phone">\"Phone: \"</string>
 
 
 </resources>
