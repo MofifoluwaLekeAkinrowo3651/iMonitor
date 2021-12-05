@@ -11,16 +11,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ProfileActivity extends AppCompatActivity {
-    TextView textView;
-    String data;
+    TextView textView1,textView2;
+    String name,email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        textView = (TextView) findViewById(R.id.profileUserName);
+        textView1 = (TextView) findViewById(R.id.profileUserName);
+        textView2 = (TextView) findViewById(R.id.profileEmail);
 
-        data=MainActivity.getActivityInstance().getData();
-        textView.setText(new StringBuilder().append("User: ").append(data));
+        name=MainActivity.getActivityInstance().getData();
+        textView1.setText(new StringBuilder().append(getString(R.string.user1)).append(name));
+        textView2.setText(R.string.email1);
     }
 
 

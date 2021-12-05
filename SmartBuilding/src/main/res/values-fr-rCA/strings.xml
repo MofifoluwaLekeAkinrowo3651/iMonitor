@@ -130,6 +130,8 @@
     <string name="invalid_username">Pas un nom d\'utilisateur valide</string>
     <string name="invalid_password">Le mot de passe doit contenir plus de 5 caractères</string>
     <string name="login_failed">"Échec de la connexion"</string>
+    <string name="user1">User: </string>
+    <string name="email1">E-mail: </string>
 
 
 </resources>
