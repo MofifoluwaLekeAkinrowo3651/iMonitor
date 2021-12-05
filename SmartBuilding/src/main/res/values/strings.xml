@@ -134,5 +134,6 @@
     <string name="url">https://www.iotacommunications.com/blog/smart-building/</string>
     <string name="user1">User: </string>
     <string name="email1">E-mail: </string>
+    <string name="phone1">Phone:</string>
 
 </resources>

@@ -7,24 +7,42 @@
     tools:context=".ProfileActivity">
 
     <TextView
-            android:id="@+id/profileUserName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/lime"
-            android:textColor="@color/blue"
-            android:textSize="10pt"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.194"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.125" />
+        android:id="@+id/profileUserName"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@color/lime"
+        android:textColor="@color/blue"
+        android:textSize="10pt"
+        android:textStyle="bold"
+        android:layout_marginLeft="2pt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.121" />
 
     <TextView
         android:id="@+id/profileEmail"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:background="@color/lime"
+        android:textColor="@color/blue"
+        android:textSize="10pt"
+        android:layout_marginLeft="2pt"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.188" />
+
+    <TextView
+        android:id="@+id/profilePhone"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2pt"
         android:background="@color/lime"
         android:textColor="@color/blue"
         android:textSize="10pt"
@@ -34,6 +52,6 @@
         app:layout_constraintHorizontal_bias="0.194"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188" />
+        app:layout_constraintVertical_bias="0.255" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
