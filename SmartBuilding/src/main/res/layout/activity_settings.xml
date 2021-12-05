@@ -9,15 +9,16 @@ tools:context="ca.greenops.it.smartbuilding.SettingsActivity">
 
     <Button
         android:id="@+id/profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="416dp"
+        android:layout_height="90dp"
         android:text="@string/profile"
+        android:textSize="@dimen/activity_horizontal_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235" />
+        app:layout_constraintVertical_bias="0.407" />
 
     <Button
         android:id="@+id/logoutBtn"
@@ -32,18 +33,20 @@ tools:context="ca.greenops.it.smartbuilding.SettingsActivity">
 
     <Switch
         android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="403dp"
+        android:layout_height="91dp"
         android:background="@color/white"
+        android:backgroundTint="@color/light_green"
         android:text="@string/portrait_lock"
+        android:textSize="@dimen/activity_horizontal_margin"
         android:textAppearance="@style/Text1"
         android:textColor="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.326"
+        app:layout_constraintVertical_bias="0.548"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

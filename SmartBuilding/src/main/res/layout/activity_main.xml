@@ -109,7 +109,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_centerInParent="true"
-                        android:background="@drawable/bell"/>
+                        android:background="@drawable/ic_review" />
                 </RelativeLayout>
             </LinearLayout>
 
