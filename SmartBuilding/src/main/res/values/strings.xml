@@ -9,10 +9,8 @@
 
     <string name="app_name">Smart Building</string>
     <string name="action_settings">Settings</string>
-
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="events">EVENTS</string>
     <string name="open">open</string>
     <string name="doorOpen">DOOR IS OPEN</string>
@@ -22,7 +20,6 @@
     <string name="fireAlarmOff">FIRE ALARM IS OFF</string>
     <string name="dining">Dining</string>
     <string name="bathroom">Bathroom</string>
-
     <string name="demo_content">Finding easier methods to monitor and control your electricity usage and keeping our Earth green!</string>
     <string name="demo_title">Smart Building</string>
     <string name="finish">Finish</string>
