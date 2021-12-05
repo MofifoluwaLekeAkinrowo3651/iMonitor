@@ -134,6 +134,17 @@
     <string name="url">https://www.iotacommunications.com/blog/smart-building/</string>
     <string name="user1">User: </string>
     <string name="email1">E-mail: </string>
-    <string name="phone1">Phone:</string>
+    <string name="phone1" translatable="false">Phone:</string>
+    <string name="NoRegistration">You are not Registered! Try again</string>
+    <string name="RegistrattionSuccess">You are successfully Registered</string>
+    <string name="EmptyEmail">Email is empty</string>
+    <string name="InvalidEmail">Enter the valid email</string>
+    <string name="InvalidPass">Enter the valid password</string>
+    <string name="EmptyPass">Password is empty</string>
+    <string name="PassLength">Length should be at least 8 characters</string>
+    <string name="un">User Name: </string>
+    <string name="Email" translatable="false">Email: </string>
+    <string name="Phone">Phone: </string>
+    <string name="UID" translatable="false">User ID: </string>
 
 </resources>
