@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     RelativeLayout home_rl;
     private GoogleApiClient googleApiClient;
     String name;
+    static MainActivity INSTANCE;
+    String data;
 
     public static void setWindowFlag(Activity activity, final int bits, boolean on) {
 
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false);
         getWindow().setStatusBarColor(Color.TRANSPARENT);
+        INSTANCE=this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -114,6 +117,17 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 .enableAutoManage(this, this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
+    }
+
+    public static MainActivity getActivityInstance()
+    {
+        return INSTANCE;
+    }
+
+    public String getData()
+    {
+        data = name;
+        return this.data;
     }
 
     private void prepareRoomData() {
