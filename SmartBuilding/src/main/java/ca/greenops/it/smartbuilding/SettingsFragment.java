@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -53,14 +54,18 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent;
         switch (item.getItemId()) {
             case (R.id.item1):
                 verify();
                 break;
             case (R.id.item2):
-                Intent intent = new Intent(getContext(), ReviewActivity.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(getContext(), ReviewActivity.class);
+                startActivity(intent1);
                 break;
+            case(R.id.item3):
+                Intent intent2 = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url)));
+                startActivity(intent2);
         }
         return super.onOptionsItemSelected(item);
     }
