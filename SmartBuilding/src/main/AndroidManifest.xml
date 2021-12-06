@@ -39,9 +39,6 @@
             android:name=".OnboardActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".EventsActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
