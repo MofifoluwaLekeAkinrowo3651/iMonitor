@@ -76,7 +76,7 @@
     <string name="review">User Review:</string>
     <string name="submit">SUBMIT</string>
     <string name="user_rating">your rating will appear here</string>
-    <string name="phone_num">Phone #</string>
+    <string name="phone_num">Phone #:</string>
     <string name="name">Name:</string>
     <string name="email">E-mail:</string>
     <string name="comments">Additional Comments:</string>
@@ -142,6 +142,13 @@
     <string name="un">User Name: </string>
     <string name="Email" translatable="false">Email: </string>
     <string name="Phone">Phone: </string>
+    <string name="enterRating">Please enter a rating</string>
+    <string name="enterComment">Please enter comments</string>
+    <string name="enterName">Please enter your full name</string>
+    <string name="enterPhone">Please enter your phone number</string>
+    <string name="enterEmail">Please enter your email</string>
+    <string name="error">ERROR</string>
+
     <string name="UID" translatable="false">User ID: </string>
 
 </resources>

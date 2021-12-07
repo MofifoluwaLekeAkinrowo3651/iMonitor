@@ -1,5 +1,6 @@
 package ca.greenops.it.smartbuilding;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,13 +44,68 @@ public class ReviewActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         cmnt = findViewById(R.id.comment);
 
+        //when button is pressed
         submit.setOnClickListener(view -> {
+
+            //if text fields are empty
+            if (ratingBar.getRating() == 0)
+            {
+                new AlertDialog.Builder(this)
+                        .setIcon(R.drawable.alert)
+                        .setTitle(R.string.error)
+                        .setMessage(R.string.enterRating)
+                        .setCancelable(false)
+                        .setPositiveButton(R.string.ok, null)
+                        .show();
+            }
+            else if (cmnt.getText().toString().isEmpty())
+            {
+                new AlertDialog.Builder(this)
+                        .setIcon(R.drawable.alert)
+                        .setTitle(R.string.error)
+                        .setMessage(R.string.enterComment)
+                        .setCancelable(false)
+                        .setPositiveButton(R.string.ok, null)
+                        .show();
+            }
+            else if (name.getText().toString().isEmpty())
+            {
+                new AlertDialog.Builder(this)
+                        .setIcon(R.drawable.alert)
+                        .setTitle(R.string.error)
+                        .setMessage(R.string.enterName)
+                        .setCancelable(false)
+                        .setPositiveButton(R.string.ok, null)
+                        .show();
+            }
+
+            else if (phoneNum.getText().toString().isEmpty())
+            {
+                new AlertDialog.Builder(this)
+                        .setIcon(R.drawable.alert)
+                        .setTitle(R.string.error)
+                        .setMessage(R.string.enterPhone)
+                        .setCancelable(false)
+                        .setPositiveButton(R.string.ok, null)
+                        .show();
+            }
+
+            else if (email.getText().toString().isEmpty())
+            {
+                new AlertDialog.Builder(this)
+                        .setIcon(R.drawable.alert)
+                        .setTitle(R.string.error)
+                        .setMessage(R.string.enterEmail)
+                        .setCancelable(false)
+                        .setPositiveButton(R.string.ok, null)
+                        .show();
+            }
             btnPressed = true;
             rating = String.valueOf(ratingBar.getRating());
             comment = cmnt.getText().toString();
             details = getText(R.string.yourRating) + rating + getText(R.string.comments) + comment;
 
-            textView.setText(getString(R.string.yourRating)+ rating + getString(R.string.commentString) + comment);
+            textView.setText(getString(R.string.yourRating)+ rating );
 
             prog();
 

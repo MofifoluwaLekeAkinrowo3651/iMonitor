@@ -77,7 +77,7 @@
     <string name="review">avis d\'utilisateur:</string>
     <string name="submit">nous faire parvenir</string>
     <string name="user_rating">votre note apparaîtra ici</string>
-    <string name="phone_num">téléphone #</string>
+    <string name="phone_num">téléphone #:</string>
     <string name="name">Nom: </string>
     <string name="email">E-mail:</string>
     <string name="comments">commentaires supplémentaires:</string>
@@ -141,6 +141,13 @@
     <string name="PassLength">Length should be at least 8 characters</string>
     <string name="un">\"User Name: \"</string>
     <string name="Phone">\"Phone: \"</string>
+
+    <string name="enterRating">Veuillez saisir une note</string>
+    <string name="enterComment">Veuillez saisir des commentaires</string>
+    <string name="enterName">Sil vous plait entrez votre nom entier</string>
+    <string name="enterPhone">Veuillez entrer votre numéro de téléphone</string>
+    <string name="enterEmail">Veuillez entrer votre email</string>
+    <string name="error">Erreur</string>
 
 
 </resources>
