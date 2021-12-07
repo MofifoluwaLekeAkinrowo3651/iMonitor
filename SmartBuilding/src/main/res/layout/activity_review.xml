@@ -22,8 +22,8 @@
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="313dp"
-        android:layout_height="545dp"
+        android:layout_width="305dp"
+        android:layout_height="484dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,17 +32,17 @@
 
         <RatingBar
             android:id="@+id/ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="187dp"
+            android:layout_height="44dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="46dp"
-            android:layout_marginTop="318dp"
-            android:layout_marginEnd="27dp"
-            android:layout_marginBottom="170dp"
-            android:numStars="5"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="272dp"
+            android:layout_marginEnd="78dp"
+            android:layout_marginBottom="168dp"
+            android:numStars="4"
             android:stepSize=".5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,17 +54,17 @@
 
         <EditText
             android:id="@+id/fullName"
-            android:autofillHints="@string/name"
-            android:layout_width="135dp"
-            android:layout_height="49dp"
+            android:layout_width="164dp"
+            android:layout_height="55dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="21dp"
-            android:layout_marginEnd="130dp"
-            android:layout_marginBottom="475dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="109dp"
+            android:layout_marginBottom="341dp"
+            android:autofillHints="@string/name"
             android:ems="10"
             android:hint="@string/name"
             android:inputType="textPersonName"
@@ -77,17 +77,17 @@
 
         <EditText
             android:id="@+id/phone"
-            android:autofillHints="@string/phone_num"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="199dp"
+            android:layout_height="51dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="83dp"
-            android:layout_marginEnd="54dp"
-            android:layout_marginBottom="414dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="141dp"
+            android:layout_marginEnd="73dp"
+            android:layout_marginBottom="276dp"
+            android:autofillHints="@string/phone_num"
             android:ems="10"
             android:hint="@string/phone_num"
             android:inputType="phone"
@@ -101,17 +101,17 @@
 
         <EditText
             android:id="@+id/email"
-            android:autofillHints="@string/email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="202dp"
+            android:layout_height="63dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="153dp"
-            android:layout_marginEnd="52dp"
-            android:layout_marginBottom="344dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="208dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="213dp"
+            android:autofillHints="@string/email"
             android:ems="10"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
@@ -123,45 +123,39 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.379" />
 
-        <EditText
-            android:id="@+id/comment"
-            android:autofillHints="@string/@comments"
-            android:layout_width="196dp"
-            android:layout_height="70dp"
+        <TextView
+            android:id="@+id/ratingView"
+            android:layout_width="160dp"
+            android:layout_height="61dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="58dp"
-            android:layout_marginTop="231dp"
-            android:layout_marginEnd="59dp"
-            android:layout_marginBottom="244dp"
-            android:background="@color/white"
+            android:layout_marginStart="61dp"
+            android:layout_marginTop="417dp"
+            android:layout_marginEnd="84dp"
+            android:layout_marginBottom="6dp"
+            android:text="@string/user_rating"
+            android:textSize="10pt" />
+
+        <EditText
+            android:id="@+id/comment"
+            android:layout_width="216dp"
+            android:layout_height="92dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="37dp"
+            android:layout_marginTop="323dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginBottom="69dp"
             android:ems="10"
             android:gravity="start|top"
             android:hint="@string/comments"
             android:inputType="textMultiLine"
-            android:minLines="6"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.485"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:minLines="6" />
 
-        <TextView
-            android:id="@+id/ratingView"
-            android:layout_width="236dp"
-            android:layout_height="86dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="54dp"
-            android:layout_marginTop="396dp"
-            android:layout_marginEnd="23dp"
-            android:layout_marginBottom="63dp"
-            android:text="@string/user_rating"
-            android:textSize="10pt" />
 
     </RelativeLayout>
 
@@ -178,8 +172,8 @@
         app:layout_constraintVertical_bias="0.127" />
 
     <RelativeLayout
-        android:layout_width="409dp"
-        android:layout_height="83dp"
+        android:layout_width="413dp"
+        android:layout_height="115dp"
         android:layout_marginBottom="2dp"
         app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -188,8 +182,24 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="match_parent"
             android:background="@drawable/bg_2" />
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="107dp"
+            android:layout_height="96dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/whitesqr"
+            android:elevation="2dp"
+            android:padding="20dp">
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="58dp"
+                android:layout_height="54dp"
+                android:background="@drawable/logo" />
+        </LinearLayout>
 
     </RelativeLayout>
 
