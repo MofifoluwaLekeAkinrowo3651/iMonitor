@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,6 +33,7 @@ public class ReviewActivity extends AppCompatActivity {
     Button submit;
     ProgressBar progressBar;
     TextView textView;
+    Toast toast;
     static EditText name,phoneNum,email,cmnt;
     int counter = 0;
 
@@ -135,6 +137,7 @@ public class ReviewActivity extends AppCompatActivity {
                 new CountDownTimer(2000, 1000) {
                     public void onFinish() {
                         progressBar.setVisibility(View.GONE);
+                        Toast.makeText(ReviewActivity.this, R.string.reviewSent, Toast.LENGTH_SHORT).show();
                     }
 
                     public void onTick(long millisUntilFinished) {

@@ -148,6 +148,7 @@
     <string name="enterPhone">Please enter your phone number</string>
     <string name="enterEmail">Please enter your email</string>
     <string name="error">ERROR</string>
+    <string name="reviewSent">Review Sent. Thank you!</string>
 
     <string name="UID" translatable="false">User ID: </string>
 
