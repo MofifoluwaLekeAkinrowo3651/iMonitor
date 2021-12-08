@@ -81,12 +81,12 @@ public class ReviewActivity extends AppCompatActivity {
                         .show();
                 progressBar.setVisibility(View.GONE);
             }
-            else if (name.getText().toString().isEmpty())
+            else if (name.getText().toString().isEmpty() || name.getText().toString().length() < 5)
             {
                 new AlertDialog.Builder(this)
                         .setIcon(R.drawable.alert)
                         .setTitle(R.string.error)
-                        .setMessage(R.string.enterName)
+                        .setMessage(R.string.enterName + " "+R.string.and + " " +R.string.nameLength)
                         .setCancelable(false)
                         .setPositiveButton(R.string.ok, null)
                         .show();
@@ -98,7 +98,7 @@ public class ReviewActivity extends AppCompatActivity {
                 new AlertDialog.Builder(this)
                         .setIcon(R.drawable.alert)
                         .setTitle(R.string.error)
-                        .setMessage(R.string.enterPhone)
+                        .setMessage(R.string.enterPhone + " "+R.string.and + " " +R.string.phoneLength)
                         .setCancelable(false)
                         .setPositiveButton(R.string.ok, null)
                         .show();
@@ -110,7 +110,7 @@ public class ReviewActivity extends AppCompatActivity {
                 new AlertDialog.Builder(this)
                         .setIcon(R.drawable.alert)
                         .setTitle(R.string.error)
-                        .setMessage(R.string.enterEmail)
+                        .setMessage(R.string.enterEmail + " "+R.string.and + " " +R.string.emailLength)
                         .setCancelable(false)
                         .setPositiveButton(R.string.ok, null)
                         .show();

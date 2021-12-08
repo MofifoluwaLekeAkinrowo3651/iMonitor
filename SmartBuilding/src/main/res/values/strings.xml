@@ -149,6 +149,10 @@
     <string name="enterEmail">Please enter your email</string>
     <string name="error">ERROR</string>
     <string name="reviewSent">Review Sent. Thank you!</string>
+    <string name="nameLength">name must be greater than five characters</string>
+    <string name="phoneLength">phone number must be greater than 7 numbers</string>
+    <string name="emailLength">email must be greater than five characters</string>
+    <string name="and">and</string>
 
     <string name="UID" translatable="false">User ID: </string>
 

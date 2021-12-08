@@ -149,6 +149,10 @@
     <string name="enterEmail">Veuillez entrer votre email</string>
     <string name="error">Erreur</string>
     <string name="reviewSent">Commentaire envoyé. Merci!</string>
+    <string name="nameLength">le nom doit comporter plus de cinq caractères</string>
+    <string name="phoneLength">le numéro de téléphone doit être supérieur à 7 chiffres</string>
+    <string name="emailLength">l e-mail doit comporter plus de cinq caractères</string>
+    <string name="and">etet</string>
 
 
 </resources>
