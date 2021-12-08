@@ -35,7 +35,6 @@ public class ReviewActivity extends AppCompatActivity {
     TextView textView;
     Toast toast;
     static EditText name,phoneNum,email,cmnt;
-    int counter = 0;
 
 
     @Override
