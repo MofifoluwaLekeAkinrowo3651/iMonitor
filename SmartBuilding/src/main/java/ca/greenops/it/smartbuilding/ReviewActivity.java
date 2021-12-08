@@ -124,16 +124,20 @@ public class ReviewActivity extends AppCompatActivity {
 
                 textView.setText(getString(R.string.yourRating) + rating);
 
-                //prog();
                 ref.setValue(details);
 
-                new CountDownTimer(30000, 1000) {
+                name.getText().clear();
+                phoneNum.getText().clear();
+                email.getText().clear();
+                cmnt.getText().clear();
+                ratingBar.setRating(0);
+
+                new CountDownTimer(2000, 1000) {
                     public void onFinish() {
                         progressBar.setVisibility(View.GONE);
                     }
 
                     public void onTick(long millisUntilFinished) {
-                         millisUntilFinished = 2000;
                     }
                 }.start();
 
@@ -142,24 +146,4 @@ public class ReviewActivity extends AppCompatActivity {
         });
     }
 
-    /*public void prog()
-    {
-        progressBar = findViewById(R.id.progressBar);
-
-        Timer t = new Timer();
-        TimerTask tt = new TimerTask() {
-            @Override
-            public void run() {
-                ref.setValue(details);
-                counter =100;
-            progressBar.setProgress(counter);
-            if(counter != 0)
-            {
-                t.cancel();
-            }
-            }
-        };
-        t.schedule(tt,0,100);
-    }
-     */
 }
