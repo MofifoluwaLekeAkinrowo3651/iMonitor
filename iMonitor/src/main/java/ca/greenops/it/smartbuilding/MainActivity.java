@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
-        prepareRoomData();
+//        prepareRoomData();
 
         welcome = findViewById(R.id.hiuser);
         Intent intent = getIntent();
@@ -116,20 +116,20 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 .build();
     }
 
-    private void prepareRoomData() {
-        Room room1 = new Room("1", getString(R.string.bedroom));
-        roomList.add(room1);
-        Room room2 = new Room("2", getString(R.string.kitchen));
-        roomList.add(room2);
-        Room room3 = new Room("3", getString(R.string.hallway));
-        roomList.add(room3);
-        Room room4 = new Room("4", getString(R.string.lockDoord));
-        roomList.add(room4);
-        Room room5 = new Room("5", getString(R.string.solarPanels));
-        roomList.add(room5);
-
-        mAdapter.notifyDataSetChanged();
-    }
+//    private void prepareRoomData() {
+//        Room room1 = new Room("1", getString(R.string.bedroom));
+//        roomList.add(room1);
+//        Room room2 = new Room("2", getString(R.string.kitchen));
+//        roomList.add(room2);
+//        Room room3 = new Room("3", getString(R.string.hallway));
+//        roomList.add(room3);
+////        Room room4 = new Room("4", getString(R.string.lockDoord));
+////        roomList.add(room4);
+////        Room room5 = new Room("5", getString(R.string.solarPanels));
+////        roomList.add(room5);
+//
+//        mAdapter.notifyDataSetChanged();
+//    }
 
     @Override
     public void onBackPressed() {
