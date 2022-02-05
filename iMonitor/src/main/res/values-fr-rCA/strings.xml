@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--    /**-->
+<!--    * Smart Building-->
+<!--    * https://github.com/MofifoluwaLekeAkinrowo3651/SmartBuilding-->
+<!--    * Created on 25-SEP-2021.-->
+<!--    * Created by : Team greenOps : Mofifoluwa Leke-Akinrowo (N01343651), Andrew Fraser(N01309442), Bibek Dhakal(N01419953)-->
+<!--    */-->
+
+    <string name="app_name">Smarty</string>
+    <string name="action_settings">Les Paramètres
+</string>
+
+    <string name="next">Suivant</string>
+    <string name="previous">Précédent</string>
+
+    <string name="events">Événements</string>
+    <string name="open">Ouvert</string>
+    <string name="doorOpen">La porte est ouverte</string>
+    <string name="doorClose">La porte est fermée</string>
+    <string name="on">Au</string>
+    <string name="fireAlarmOn">L\'alarme incendie est activée</string>
+    <string name="fireAlarmOff">L\'alarme incendie est desactivée</string>
+
+    <string name="demo_content">Trouver des méthodes plus simples pour surveiller et contrôler votre consommation d\'électricité et garder notre Terre verte!</string>
+    <string name="demo_title">Bâtiment Intelligent</string>
+    <string name="finish">Terminer</string>
+    <string name="forgot_password">\" Mot de passe oublié?\"</string>
+    <string name="login">Connexion</string>
+    <string name="hi_user">Salut, Utilisateur</string>
+    <string name="welcome_to_your_home">Bienvenue chez toi</string>
+    <string name="humid">HUMID</string>
+    <string name="bedroom">Chambre</string>
+    <string name="temp">Température</string>
+<!--    <string name="set_off_time">Definir l\'heure d'arret</string>-->
+    <string name="limit_data_usage">limiter_l\'utilisation_des_données</string>
+    <string name="data_mgt">Gestion de données</string>
+    <string name="prefs_restricted_mode">prefs_restricted_mode</string>
+    <string name="restricted_mode">Le mode restreint empêche tout changement de puissance.</string>
+    <string name="restricted_mode_description">Mode restreint</string>
+    <string name="person">Personne</string>
+    <string name="demo_content2">Ensemble, nous pouvons sauver et rendre la Terre plus verte !</string>
+    <string name="exit_msg1">Voulez-vous sortir</string>
+    <string name="exit">Oui</string>
+    <string name="stay">Non</string>
+    <string name="user_name">Nom d\'utilisateur</string>
+    <string name="bed_room">chambre</string>
+    <string name="item_1">fonction d\'exécution</string>
+    <string name="portrait_lock">serrure portrait</string>
+    <string name="account">Compte</string>
+    <string name="sync_option">option de synchronisation</string>
+    <string name="help_and_support">aide et soutien</string>
+
+    <string name="profile">profil</string>
+    <string name="solarPanels">panneaux solaires</string>
+    <string name="lockDoord">verrouiller les portes</string>
+    <string name="dining">à manger</string>
+    <string name="hallway">couloir</string>
+    <string name="kitchen">cuisine</string>
+    <string name="bathroom">salle de bains</string>
+    <string name="username">\"Nom d\'utilisateur:\"</string>
+    <string name="pass">\"le mot de passe: \"</string>
+    <string name="grant">permission accordée</string>
+    <string name="msg1">autorisation requise!</string>
+    <string name="msg2">une autorisation pour la fonctionnalité est requise</string>
+    <string name="ok">d\'accord</string>
+    <string name="cancel">Annuler</string>
+    <string name="deny">permission refusée</string>
+    <string name="wrongLogin">Votre nom d\'utilisateur ou votre mot de passe est incorrect. Veuillez saisir une combinaison différente</string>
+    <string name="wrongLoginTitle">nom d\'utilisateur incorrect / mot de passe</string>
+    <string name="password">Le mot de passe</string>
+    <string name="google_login">Connexion Google</string>
+    <string name="remember_me">Souviens-toi de Moi</string>
+    <string name="switch_language">Changer de Langue</string>
+    <string name="web_client_id">1097759153378-opgaggv2srm3jti1ec8h09qmmca19hv4.apps.googleusercontent.com</string>
+    <string name="review">avis d\'utilisateur:</string>
+    <string name="submit">nous faire parvenir</string>
+    <string name="user_rating">votre note apparaîtra ici</string>
+    <string name="phone_num">téléphone #:</string>
+    <string name="name">Nom: </string>
+    <string name="email">E-mail:</string>
+    <string name="comments">commentaires supplémentaires:</string>
+    <string name="yourRating">votre note est: </string>
+    <string name="user">Nom d\'utilisateur</string>
+    <string name="greet">salut </string>
+    <string name="failedMsg">la déconnexion a échoué</string>
+    <string name="pass1">la déconnexion a échoué</string>
+    <string name="successMsg">connexion réussie</string>
+    <string name="loginMsg1">connexion échouée</string>
+    <string name="loginMsg">\"connexion échouée. \"</string>
+    <string name="msg6">\"Succès \"</string>
+    <string name="successLogin">Connexion réussie</string>
+    <string name="notiftitle">CENG322</string>
+    <string name="notiftext">greenOps SmartBuilding Notification</string>
+    <string name="channelname">Notification</string>
+    <string name="builderid">Notification</string>
+    <string name="prefname">case à cocher</string>
+    <string name="usernull">onAuthStateChanged:signed_in :</string>
+    <string name="userelse">onAuthStateChanged:signed_out</string>
+    <string name="sharedprefname">case à cocher</string>
+    <string name="remember">rappelles toi</string>
+    <string name="checkbox">case à cocher</string>
+    <string name="dialogtitle">Connexion</string>
+    <string name="dialogmessage">Se connecter..</string>
+    <string name="help">Aide et soutien</string>
+    <string name="support">Support</string>
+    <string name="register_logo">logo</string>
+
+    <string name="enter_e_mail">Entrez l\'e-mail</string>
+    <string name="enter_password">Entrer le mot de passe</string>
+    <string name="confirm_password">Confirmez le mot de passe</string>
+    <string name="register">S\'inscrire</string>
+    <string name="enter_phone_number">Entrez le numéro de téléphone</string>
+    <string name="enter_full_name">Entrez le nom complet</string>
+    <string name="areYouSure">aêtes-vous sûr de vouloir soumettre?</string>
+    <string name="confirmation">CONFIRMATION</string>
+    <string name="no">NON</string>
+    <string name="commentString">\nCommentaire de l\'utilisateur : \"</string>
+    <string name="logout">Se déconnecter</string>
+    <string name="floating_action_button">Floating Action Button</string>
+    <string name="potrait">Portrait verrouillé</string>
+    <string name="url">https://www.iotacommunications.com/blog/smart-building/</string>
+    <string name="title_activity_login2">LoginActivity2</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">le mot de passe</string>
+    <string name="action_sign_in">Connexion ou Inscription</string>
+    <string name="action_sign_in_short">S\'identifier</string>
+    <string name="welcome">"Bienvenue !"</string>
+    <string name="invalid_username">Pas un nom d\'utilisateur valide</string>
+    <string name="invalid_password">Le mot de passe doit contenir plus de 5 caractères</string>
+    <string name="login_failed">"Échec de la connexion"</string>
+    <string name="user1">User: </string>
+    <string name="email1">E-mail: </string>
+    <string name="NoRegistration">You are not Registered! Try again</string>
+    <string name="RegistrattionSuccess">You are successfully Registered</string>
+    <string name="EmptyEmail">Email is empty</string>
+    <string name="InvalidEmail">Enter the valid email</string>
+    <string name="InvalidPass">Enter the valid password</string>
+    <string name="EmptyPass">Password is empty</string>
+    <string name="PassLength">Length should be at least 8 characters</string>
+    <string name="un">\"User Name: \"</string>
+    <string name="Phone">\"Phone: \"</string>
+
+    <string name="enterRating">Veuillez saisir une note</string>
+    <string name="enterComment">Veuillez saisir des commentaires</string>
+    <string name="enterName">Sil vous plait entrez votre nom entier</string>
+    <string name="enterPhone">Veuillez entrer votre numéro de téléphone</string>
+    <string name="enterEmail">Veuillez entrer votre email</string>
+    <string name="error">Erreur</string>
+    <string name="reviewSent">Commentaire envoyé. Merci!</string>
+    <string name="nameLength">le nom doit comporter plus de cinq caractères</string>
+    <string name="phoneLength">le numéro de téléphone doit être supérieur à 7 chiffres</string>
+    <string name="emailLength">l e-mail doit comporter plus de cinq caractères</string>
+    <string name="and">etet</string>
+
+
+</resources>

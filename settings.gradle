@@ -7,4 +7,8 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Smart Building"
+<<<<<<< HEAD
 include ':SmartBuilding'
+=======
+include ':iMonitor'
+>>>>>>> 2f2b5b4 (Minor)
