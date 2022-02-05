@@ -45,8 +45,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 //DESIGN PRINCIPLE INTERFACE SEGREGATION PRINCIPLE
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
-    EditText username;
-    EditText password;
+    EditText username, password;
     SignInButton signInButton;
     GoogleApiClient googleApiClient;
     CheckBox rememberMe;
