@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-# SmartBuilding 
-## Team greenOps : Mofifoluwa Leke-Akinrowo (N01343651), Andrew Fraser(N01309442), Bibek Dhakal(N01419953)
-
-### The smart building app is an app that is aimed to help save on electricity, and allow easy control over devices used in commercial or residential buildings. These devices can be controlled once connected through the app with switches allowing you to turn off all devices in a room in the building all at once or selectively.
-=======
 # iMonitor 
 ## Team greenOps : Mofifoluwa Leke-Akinrowo (N01343651), Andrew Fraser(N01309442)
 
