@@ -230,10 +230,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             String email = account.getEmail();
             AuthCredential credential = GoogleAuthProvider.getCredential(idToken,null);
             firebaseAuthWithGoogle(credential);
-
-            Toast.makeText(this, getString(R.string.successMsg), Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
         } else {
             Log.e(TAG, getString(R.string.loginMsg)+completedTask);
             Toast.makeText(this,getString( R.string.loginMsg1), Toast.LENGTH_SHORT).show();        }

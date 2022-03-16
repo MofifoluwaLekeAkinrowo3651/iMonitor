@@ -1,7 +1,5 @@
 package ca.greenops.it.smartbuilding;
 
-import static android.content.ContentValues.TAG;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.NotificationChannel;
@@ -10,22 +8,16 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -39,9 +31,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * iMonitor
@@ -160,8 +149,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         if(opr.isDone()){
             GoogleSignInResult result=opr.get();
             handleSignInResult(result);
-        }else{
-            opr.setResultCallback(this::handleSignInResult);
+            //opr.setResultCallback(this::handleSignInResult);
         }
     }
 
