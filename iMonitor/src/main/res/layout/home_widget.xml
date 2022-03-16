@@ -31,7 +31,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
-                android:background="@drawable/ic_double_bed" />
+                android:background="@drawable/ic_double_bed"/>
 
             <TextView
                 android:id="@+id/title"
@@ -53,17 +53,6 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp">
 
-            <ca.greenops.it.smartbuilding.SwitchButton
-                android:layout_width="65dp"
-                android:layout_height="30dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="5dp"
-                app:sb_background="@color/colorPrimaryLight"
-                app:sb_button_color="@color/colorPrimaryDark"
-                app:sb_checked_color="#673AB7"
-                app:sb_checkline_color="#a5dc88"
-                app:sb_shadow_color="#A36F95"
-                app:sb_uncheckcircle_color="#3F51B5" />
         </RelativeLayout>
     </RelativeLayout>
 

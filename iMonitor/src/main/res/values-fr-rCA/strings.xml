@@ -31,9 +31,8 @@
     <string name="hi_user">Salut, Utilisateur</string>
     <string name="welcome_to_your_home">Bienvenue chez toi</string>
     <string name="humid">HUMID</string>
-    <string name="bedroom">Chambre</string>
+    <string name="water_tank">Réservoir d\'eau</string>
     <string name="temp">Température</string>
-<!--    <string name="set_off_time">Definir l\'heure d'arret</string>-->
     <string name="limit_data_usage">limiter_l\'utilisation_des_données</string>
     <string name="data_mgt">Gestion de données</string>
     <string name="prefs_restricted_mode">prefs_restricted_mode</string>
@@ -56,8 +55,8 @@
     <string name="solarPanels">panneaux solaires</string>
     <string name="lockDoord">verrouiller les portes</string>
     <string name="dining">à manger</string>
-    <string name="hallway">couloir</string>
-    <string name="kitchen">cuisine</string>
+    <string name="security">Sécurité</string>
+    <string name="Thermometer">Thermometer</string>
     <string name="bathroom">salle de bains</string>
     <string name="username">\"Nom d\'utilisateur:\"</string>
     <string name="pass">\"le mot de passe: \"</string>

@@ -71,7 +71,7 @@
                     android:layout_centerInParent="true"
                     android:textStyle="bold"
                     android:layout_gravity="center"
-                    android:textSize="@android:dimen/dialog_min_width_major"
+                    android:textSize="@android:dimen/system_app_widget_inner_radius"
                     />
 
             </LinearLayout>

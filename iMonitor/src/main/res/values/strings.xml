@@ -27,7 +27,7 @@
     <string name="login">Login</string>
     <string name="hi_user">Hi, User</string>
     <string name="welcome_to_your_home">Welcome to your home</string>
-    <string name="bedroom">BedRoom Lights</string>
+    <string name="water_tank">Water Tank</string>
     <string name="temp">TEMP</string>
     <string name="humid">HUMID</string>
     <string name="key_upload_quality" translatable="false">key_upload_quality</string>
@@ -55,9 +55,8 @@
     <string name="profile">Profile</string>
     <string name="solarPanels">Fire|Smoke Detector</string>
     <string name="lockDoord">Security Locks</string>
-    <string name="hallway">Hallway Lights</string>
-    <string name="kitchen">Kitchen Lights</string>
-    <!--    <string name="bedroom">BedRoom</string>-->
+    <string name="security">Security</string>
+    <string name="Thermometer">Thermometer</string>
     <string name="username">\"Email: \"</string>
     <string name="pass">\" Password: \"</string>
     <string name="grant">Permission GRANTED</string>
@@ -155,5 +154,7 @@
     <string name="and">and</string>
 
     <string name="UID" translatable="false">User ID: </string>
+    <string name="ultsonic_txt">Click For HC-SR04 Readings</string>
+    <string name="bmp_txt">Click For BMP280 Readings</string>
 
 </resources>

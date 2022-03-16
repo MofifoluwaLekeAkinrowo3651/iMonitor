@@ -1,5 +1,7 @@
 package ca.greenops.it.smartbuilding;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.NotificationChannel;
@@ -8,13 +10,16 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +34,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,13 +52,13 @@ import java.util.List;
 
 //DESIGN PRINCIPLE INTERFACE SEGREGATION PRINCIPLE
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
-    private final List<Room> roomList = new ArrayList<>();
-    RecyclerView recyclerView;
-    private RoomAdapter mAdapter;
+
     TextView welcome;
     RelativeLayout home_rl;
     private GoogleApiClient googleApiClient;
     String name;
+    private TextView ulttv;
+    Button ultbtn;
 
     public static void setWindowFlag(Activity activity, final int bits, boolean on) {
 
@@ -76,17 +86,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             manager.createNotificationChannel(channel);
         }
 
+        ulttv = findViewById(R.id.UltRead);
+        ultbtn = findViewById(R.id.ultsonic);
+
         home_rl = findViewById(R.id.home_rl);
         ImageButton setting_rl = findViewById(R.id.setting_rl);
         ImageButton review_rl = findViewById(R.id.review);
-
-        mAdapter = new RoomAdapter(roomList, getApplicationContext());
-        recyclerView = findViewById(R.id.recycler_view);
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(mAdapter);
-//        prepareRoomData();
 
         welcome = findViewById(R.id.hiuser);
         Intent intent = getIntent();
@@ -104,10 +109,29 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             startActivity(i);
         });
 
-        //Builder
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
+        DatabaseReference dbref = FirebaseDatabase.getInstance().getReference().child("distance");
+
+        ultbtn.setOnClickListener((View.OnClickListener) view -> {
+            dbref.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(snapshot.exists()){
+                        String value = snapshot.getValue().toString();
+                        ulttv.setText("Distance: "+ value + " cm");
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        });
+
+                //Builder
+                GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                        .requestEmail()
+                        .build();
 
         //Builder
         googleApiClient = new GoogleApiClient.Builder(this)
@@ -115,21 +139,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
     }
-
-//    private void prepareRoomData() {
-//        Room room1 = new Room("1", getString(R.string.bedroom));
-//        roomList.add(room1);
-//        Room room2 = new Room("2", getString(R.string.kitchen));
-//        roomList.add(room2);
-//        Room room3 = new Room("3", getString(R.string.hallway));
-//        roomList.add(room3);
-////        Room room4 = new Room("4", getString(R.string.lockDoord));
-////        roomList.add(room4);
-////        Room room5 = new Room("5", getString(R.string.solarPanels));
-////        roomList.add(room5);
-//
-//        mAdapter.notifyDataSetChanged();
-//    }
 
     @Override
     public void onBackPressed() {
