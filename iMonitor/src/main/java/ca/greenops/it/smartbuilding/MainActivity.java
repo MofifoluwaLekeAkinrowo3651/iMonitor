@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     String name;
     private TextView ulttv;
     Button ultbtn;
+    Button bmpBtn;
 
     public static void setWindowFlag(Activity activity, final int bits, boolean on) {
 
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
         ulttv = findViewById(R.id.UltRead);
         ultbtn = findViewById(R.id.ultsonic);
+        bmpBtn = findViewById(R.id.bmp);
 
         home_rl = findViewById(R.id.home_rl);
         ImageButton setting_rl = findViewById(R.id.setting_rl);
@@ -100,6 +102,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
         DatabaseReference dbref = FirebaseDatabase.getInstance().getReference().child("distance");
 
+
         ultbtn.setOnClickListener((View.OnClickListener) view -> {
             dbref.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -107,6 +110,24 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     if(snapshot.exists()){
                         String value = snapshot.getValue().toString();
                         ulttv.setText("Distance: "+ value + " cm");
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        });
+        DatabaseReference bmpDbref = FirebaseDatabase.getInstance().getReference().child("Temperature and pressure");
+
+        bmpBtn.setOnClickListener((View.OnClickListener) view -> {
+            bmpDbref.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(snapshot.exists()){
+                        String value = snapshot.getValue().toString();
+                        ulttv.setText(value);
                     }
                 }
 
