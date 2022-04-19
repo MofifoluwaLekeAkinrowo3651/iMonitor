@@ -11,6 +11,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/SmartBuilding" />
+            <option value="$PROJECT_DIR$/iMonitor" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
