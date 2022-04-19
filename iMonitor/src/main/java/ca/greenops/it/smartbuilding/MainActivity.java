@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     RelativeLayout home_rl;
     private GoogleApiClient googleApiClient;
     String name;
-    private TextView ulttv;
+    private TextView ulttv, bmpTextView;
     Button ultbtn;
     Button bmpBtn;
 
@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         }
 
         ulttv = findViewById(R.id.UltRead);
+        bmpTextView = findViewById(R.id.bmp280_textView);
         ultbtn = findViewById(R.id.ultsonic);
         bmpBtn = findViewById(R.id.bmp);
 
@@ -127,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if(snapshot.exists()){
                         String value = snapshot.getValue().toString();
-                        ulttv.setText(value);
+                        bmpTextView.setText(value);
                     }
                 }
 
